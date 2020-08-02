@@ -1,0 +1,168 @@
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}                                      
+\usepackage[OT4]{fontenc}      
+%\usepackage[T1]{fontenc}                            
+\usepackage[polish]{babel}                           
+\selectlanguage{polish}
+\usepackage{indentfirst} 
+\usepackage[dvips]{graphicx}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{ifpdf}
+\usepackage{mathtext} % polskie znaki w trybie matematycznym
+%\makeindex  % utworzenie skorowidza (w dokumencie pdf)
+\usepackage{lmodern}
+%\usepackage[osf]{libertine}
+\usepackage{filecontents}
+
+
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\newcounter{nextYear}
+\setcounter{nextYear}{\the\year}
+\stepcounter{nextYear}
+
+% rozszerzenie nieco strony
+%\setlength{\topmargin}{-1cm} \setlength{\textheight}{24.5cm}
+%\setlength{\textwidth}{17cm} \addtolength{\hoffset}{-1.5cm}
+%\setlength{\parindent}{0.5cm} \setlength{\footskip}{2cm}
+%\linespread{1.2} % odstep pomiedzy wierszami
+
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+
+\newcommand{\tl}[1]{\textbf{#1}} 
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} % usuwanie bieżących ustawień
+\fancyhead[LE,RO]{\small\bfseries\thepage}
+\fancyhead[LO]{\small\bfseries\rightmark}
+\fancyhead[RE]{\small\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % pionowy odstęp na kreskę
+\fancypagestyle{plain}{%
+\fancyhead{} % usuń p. górne na stronach pozbawionych numeracji
+\renewcommand{\headrulewidth}{0pt} % pozioma kreska
+}
+
+% ustawienia listingu programow
+%\lstset{	language=C++, 
+%        	numbers=left, 
+%        	numberstyle=\tiny, 
+%        	stepnumber=1, 
+%        	numbersep=5pt,
+%		  	stringstyle=\ttfamily,
+%			showstringspaces=false,
+% 			tabsize=4
+%		}
+
+\lstset{%
+language=C++,%
+commentstyle=\textit,%
+identifierstyle=\textsf,%
+keywordstyle=\sffamily\bfseries, %
+%captionpos=b,%
+tabsize=3,%
+frame=lines,%
+numbers=left,%
+numberstyle=\tiny,%
+numbersep=5pt,%
+breaklines=true,%
+morekeywords={pWezel,Wezel,string,ref,params_result,time_t},%
+escapeinside={(*@}{@*)},%
+%basicstyle=\footnotesize,%
+%keywords={double,int,for,if,return,vector,matrix,void,public,class,string,%
+%float,sizeof,char,FILE,while,do,const}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% mala zmiana sposobu wyswietlania notek bocznych
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{%
+  {\linespread{0.85}\normalfont\scriptsize%
+%   \oldmarginpar[\vspace{-1.5ex}\raggedleft\scriptsize\color{black}\textsf{#1}]%    left pages
+%                {\vspace{-1.5ex}\raggedright\scriptsize\color{black}\textsf{#1}}% right pades
+\oldmarginpar[\hspace{1cm}\begin{minipage}{3cm}\raggedleft\scriptsize\color{black}\textsf{#1}\end{minipage}]%    left pages
+{\hspace{0cm}\begin{minipage}{3cm}\raggedright\scriptsize\color{black}\textsf{#1}\end{minipage}}% right pages
+}%
+}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\begin{document}
+\frenchspacing
+\thispagestyle{empty}
+\begin{center}
+{\Large\sf Politechnika Śląska w Gliwicach   % Alma Mater
+
+Wydział Automatyki, Elektroniki i Informatyki
+
+}
+
+\vfill
+
+%\includegraphics[width=0.15\textwidth]{graf/polsl.pdf}
+
+\vfill\vfill
+
+{\Huge\sffamily\bfseries Programowanie Komputerów 3} \\ % tu podać nazwę przedmiotu
+
+\vfill\vfill
+
+{\LARGE\sf GRA W ŻYCIE}  % a tu temat laborki :-)
+
+
+\vfill \vfill\vfill\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{tabular}{ll}
+\toprule
+	autor                                                  & Tomasz Sojka          \\
+	prowadzący                                             & mg inż. Grzegorz Kwiatkowski       \\
+	rok akademicki                                         & 2018/\the\year \\
+	kierunek                                               & informatyka                 \\
+	rodzaj studiów                                         & SSI                         \\
+	semestr                                                & 3                           \\
+	termin laboratorium / ćwiczeń                          & wtorek, 13:45 -- 15:15      \\
+	grupa                                                  & 2                           \\
+\bottomrule &  \\
+\end{tabular}
+
+\end{center}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Informacja}
+\subsection{Diagram UML}
+ Pełen diagram UML mozna znalezc pod linkiem: \\
+\url{https://go.gliffy.com/go/share/sbejb2lxs2s3y1t601g8}
+\subsection{Kod i pliki testowe}
+Pełny kod programu oraz pliki tekstowe do testowania znajdują się na moim repozytorium: \\
+\url{https://github.com/tomaszsojka/my/tree/master/projekt_pk3}
+\subsection{Specyfikacja wewnętrzna }
+
+Poniżej znajduje się dokumentacja klas i plików. \\
+Między innymi opis klas i ich metod, opis funkcji oraz operatorów, grafy wywołania, diagramy dziedziczenia i współpracy klas. \\
+Zaawansowany c++:
+W programie użyto wątków w celu synchronizacji dwóch metod klasy menue. Ich opis można znaleźć w dokumentacji metod klasy menue:  \textbf{petla} i \textbf{zatrzymaj\_petle}, oraz w pełnym kodzie w pliku metody\_menue.cpp w metodzie \textbf{poprowadz\_uzytkownika}.
+\label{id:sec:specyfikacja}
+\end{document}
+% Koniec wieńczy dzieło.

@@ -1,0 +1,98 @@
+\hypertarget{classwyswietl}{}\section{Dokumentacja klasy wyswietl}
+\label{classwyswietl}\index{wyswietl@{wyswietl}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+wyswietl.\+h$>$}
+
+
+
+Diagram dziedziczenia dla wyswietl
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classwyswietl__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla wyswietl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classwyswietl__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classwyswietl_a288a22bd278a0944739e792f3f2494fa}{wyswietl\+\_\+plansze}} ()
+\item 
+void \mbox{\hyperlink{classwyswietl_ac772602890ae0255a8ecc616f214b3db}{zapisz\+\_\+plansze}} ()
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do wyswietlania oraz wpisywania aktualnego stanu planszy do pliku. Jest klasa pochodna klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}. Rozszerza tylko o metody. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classwyswietl_a288a22bd278a0944739e792f3f2494fa}\label{classwyswietl_a288a22bd278a0944739e792f3f2494fa}} 
+\index{wyswietl@{wyswietl}!wyswietl\+\_\+plansze@{wyswietl\+\_\+plansze}}
+\index{wyswietl\+\_\+plansze@{wyswietl\+\_\+plansze}!wyswietl@{wyswietl}}
+\subsubsection{\texorpdfstring{wyswietl\+\_\+plansze()}{wyswietl\_plansze()}}
+{\footnotesize\ttfamily void wyswietl\+::wyswietl\+\_\+plansze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda wyswietla aktualny stan planszy na strumien wyjsciowy. Metoda wykorzystuje przeciazony operator strumieniowy $<$$<$. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classwyswietl_a288a22bd278a0944739e792f3f2494fa_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwyswietl_a288a22bd278a0944739e792f3f2494fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwyswietl_ac772602890ae0255a8ecc616f214b3db}\label{classwyswietl_ac772602890ae0255a8ecc616f214b3db}} 
+\index{wyswietl@{wyswietl}!zapisz\+\_\+plansze@{zapisz\+\_\+plansze}}
+\index{zapisz\+\_\+plansze@{zapisz\+\_\+plansze}!wyswietl@{wyswietl}}
+\subsubsection{\texorpdfstring{zapisz\+\_\+plansze()}{zapisz\_plansze()}}
+{\footnotesize\ttfamily void wyswietl\+::zapisz\+\_\+plansze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda zapisuje sktualny stan planszy do pliku o podanej przez uzytkownika nazwie.
+
+Najpierw zostaje wyswietlony komunikat proszacy o podanie nazwy pliku. Po podaniu nazwy otwieranyn jest plik. Wykorzystany przeciazony operator strumieniowy $<$$<$. Jezeli plik nie istnieje, wyrzucany jest wyjatek przez ten operator. Jesli istnieje dane zostaja wpisane do pliku. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{classwyswietl_ac772602890ae0255a8ecc616f214b3db_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwyswietl_ac772602890ae0255a8ecc616f214b3db_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__wyswietl_8h}{klasa\+\_\+wyswietl.\+h}}\item 
+\mbox{\hyperlink{metody__wyswietl_8cpp}{metody\+\_\+wyswietl.\+cpp}}\end{DoxyCompactItemize}

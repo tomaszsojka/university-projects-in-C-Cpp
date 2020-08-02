@@ -1,0 +1,310 @@
+\hypertarget{classplansza}{}\section{Dokumentacja klasy plansza}
+\label{classplansza}\index{plansza@{plansza}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+plansza.\+h$>$}
+
+
+
+Diagram dziedziczenia dla plansza
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classplansza__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla plansza\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classplansza__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classplansza_a62b15c245954e816719b92ed241db439}{$\sim$plansza}} ()
+\item 
+\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ \mbox{\hyperlink{classplansza_ab58b287ec128257badf582e1ce7ea11e}{stworz\+\_\+element}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$pp, \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$pl, \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$pd, \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$pg)
+\item 
+void \mbox{\hyperlink{classplansza_a560279ec20a1cd126141f27f5f177a2c}{stworz\+\_\+podstawowa\+\_\+plansze}} ()
+\item 
+void \mbox{\hyperlink{classplansza_a50024fced2d5f43220cee76e77e54882}{rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$el)
+\item 
+void \mbox{\hyperlink{classplansza_aed692a9ce528a20a6e431d84cdb58f6b}{rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$el)
+\item 
+void \mbox{\hyperlink{classplansza_a6b7712b23870fbe508d00e68a740e853}{rozszerz\+\_\+plansze\+\_\+w\+\_\+dol}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$el)
+\item 
+void \mbox{\hyperlink{classplansza_a47bf5f6dea6fad229b9c525638077df8}{rozszerz\+\_\+plansze\+\_\+w\+\_\+gore}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$el)
+\item 
+void \mbox{\hyperlink{classplansza_afbbb011300c83927a042e5d2c0a6820d}{usun\+\_\+plansze}} ()
+\item 
+\mbox{\hyperlink{classplansza_a0400f244095fd65517b118194f6c5d9c}{operator int}} ()
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+Klasa umozliwia operacje na planszy. Jest klasa pochodna klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}.
+
+Klasa nie rozszerza klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} o zadne pole. Zawera jedynie dodatkowe metody, takie jak tworzenie elementu planszy, tworzenie z nich podstawowej planszy, rozszerzanie planszy w dana strone. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classplansza_a62b15c245954e816719b92ed241db439}\label{classplansza_a62b15c245954e816719b92ed241db439}} 
+\index{plansza@{plansza}!````~plansza@{$\sim$plansza}}
+\index{````~plansza@{$\sim$plansza}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{$\sim$plansza()}{~plansza()}}
+{\footnotesize\ttfamily plansza\+::$\sim$plansza (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destruktor klasy plansza. Poza usunieciem obiektu klasy plansza zwalnia pamiec zajmowana przez elementy planszy do gry w zycie. Jesli ppoczatkowy na nic nie wskazuje destruktor tylko usuwa obiekt. Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a62b15c245954e816719b92ed241db439_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classplansza_a0400f244095fd65517b118194f6c5d9c}\label{classplansza_a0400f244095fd65517b118194f6c5d9c}} 
+\index{plansza@{plansza}!operator int@{operator int}}
+\index{operator int@{operator int}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{operator int()}{operator int()}}
+{\footnotesize\ttfamily plansza\+::operator int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Przeciazony operator konwersji na int zlicza ilosc elementow planszy. Nic nie pobiera i zwraca ilosc elementow planszy.
+
+Operator ustawia wskaznik chwilowy tmp na adres wskazywany przez wskaznik ppoczatkowy po czym przesuwa go w prawo zliczajac kolumny. Nastepnie przesuwa ten sam chwilowy wskaznik w dol i liczy wiersze. Poniewaz plansza ma zawsze ksztalt prostakatny wystarczy pomnozyc ilosc kolumn razy ilosc wierszy. \begin{DoxyReturn}{Zwraca}
+ilosc elementow planszy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classplansza_a6b7712b23870fbe508d00e68a740e853}\label{classplansza_a6b7712b23870fbe508d00e68a740e853}} 
+\index{plansza@{plansza}!rozszerz\+\_\+plansze\+\_\+w\+\_\+dol@{rozszerz\+\_\+plansze\+\_\+w\+\_\+dol}}
+\index{rozszerz\+\_\+plansze\+\_\+w\+\_\+dol@{rozszerz\+\_\+plansze\+\_\+w\+\_\+dol}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{rozszerz\+\_\+plansze\+\_\+w\+\_\+dol()}{rozszerz\_plansze\_w\_dol()}}
+{\footnotesize\ttfamily void plansza\+::rozszerz\+\_\+plansze\+\_\+w\+\_\+dol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Metoda rozszerza plansze o wiersz w dol. Pobiera wartosc typu wskaznikowego na obiekt klasy element planszy i nic nie zwraca.
+
+Metoda jest uzywana do rozszerzenia planszy w sytuacji gdy komorka \char`\"{}ozyje\char`\"{}(pole bool czy\+\_\+zyje klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} = 1) na dolnej krawedzi. Dzieki niej plansza jest nieskonczona z dolu (ograniczona pamiecia komputera). Jesli cos poszlo nie tak i wskaznik el wskazuje na el w srodku planszy, metoda nic nie robi. 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na komorke na dolnej krawedzi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a6b7712b23870fbe508d00e68a740e853_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a6b7712b23870fbe508d00e68a740e853_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_a47bf5f6dea6fad229b9c525638077df8}\label{classplansza_a47bf5f6dea6fad229b9c525638077df8}} 
+\index{plansza@{plansza}!rozszerz\+\_\+plansze\+\_\+w\+\_\+gore@{rozszerz\+\_\+plansze\+\_\+w\+\_\+gore}}
+\index{rozszerz\+\_\+plansze\+\_\+w\+\_\+gore@{rozszerz\+\_\+plansze\+\_\+w\+\_\+gore}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{rozszerz\+\_\+plansze\+\_\+w\+\_\+gore()}{rozszerz\_plansze\_w\_gore()}}
+{\footnotesize\ttfamily void plansza\+::rozszerz\+\_\+plansze\+\_\+w\+\_\+gore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Metoda rozszerza plansze o wiersz w gore. Pobiera wartosc typu wskaznikowego na obiekt klasy element planszy i nic nie zwraca.
+
+Metoda jest uzywana do rozszerzenia planszy w sytuacji gdy komorka \char`\"{}ozyje\char`\"{}(pole bool czy\+\_\+zyje klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} = 1) na gornej krawedzi. Dzieki niej plansza jest nieskonczona z gory (ograniczona pamiecia komputera). Jesli cos poszlo nie tak i wskaznik el wskazuje na el w srodku planszy, metoda nic nie robi. Metoda przesuwa wskaznik ppoczatkowy z klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} na pierwszy element dodawanej kolumny(element w lewym gornym rogu). 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na komorke na gornej krawedzi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a47bf5f6dea6fad229b9c525638077df8_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a47bf5f6dea6fad229b9c525638077df8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_aed692a9ce528a20a6e431d84cdb58f6b}\label{classplansza_aed692a9ce528a20a6e431d84cdb58f6b}} 
+\index{plansza@{plansza}!rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo@{rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo}}
+\index{rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo@{rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo()}{rozszerz\_plansze\_w\_lewo()}}
+{\footnotesize\ttfamily void plansza\+::rozszerz\+\_\+plansze\+\_\+w\+\_\+lewo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Metoda rozszerza plansze o kolumne w lewo. Pobiera wartosc typu wskaznikowego na obiekt klasy element planszy i nic nie zwraca.
+
+Metoda jest uzywana do rozszerzenia planszy w sytuacji gdy komorka \char`\"{}ozyje\char`\"{}(pole bool czy\+\_\+zyje klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} = 1) na lewej krawedzi. Dzieki niej plansza jest nieskonczona z lewej strony (ograniczona pamiecia komputera). Jesli cos poszlo nie tak i wskaznik el wskazuje na el w srodku planszy, metoda nic nie robi. Metoda przesuwa wskaznik ppoczatkowy z klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} na pierwszy element dodawanej kolumny(element w lewym gornym rogu). 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na komorke na lewej krawedzi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_aed692a9ce528a20a6e431d84cdb58f6b_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_aed692a9ce528a20a6e431d84cdb58f6b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_a50024fced2d5f43220cee76e77e54882}\label{classplansza_a50024fced2d5f43220cee76e77e54882}} 
+\index{plansza@{plansza}!rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo@{rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo}}
+\index{rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo@{rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo()}{rozszerz\_plansze\_w\_prawo()}}
+{\footnotesize\ttfamily void plansza\+::rozszerz\+\_\+plansze\+\_\+w\+\_\+prawo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Metoda rozszerza plansze o kolumne w prawo. Pobiera wartosc typu wskaznikowego na obiekt klasy element planszy i nic nie zwraca.
+
+Metoda jest uzywana do rozszerzenia planszy w sytuacji gdy komorka \char`\"{}ozyje\char`\"{}(pole bool czy\+\_\+zyje klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} = 1) na prawej krawedzi. Dzieki niej plansza jest nieskonczona z prawej strony (ograniczona pamiecia komputera). Jesli cos poszlo nie tak i wskaznik el wskazuje na el w srodku planszy, funkcja nic nie robi. 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na komorke na prawej krawedzi. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nowy -\/ wskaznik na nowo utworzony obiekt klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}}. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a50024fced2d5f43220cee76e77e54882_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a50024fced2d5f43220cee76e77e54882_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_ab58b287ec128257badf582e1ce7ea11e}\label{classplansza_ab58b287ec128257badf582e1ce7ea11e}} 
+\index{plansza@{plansza}!stworz\+\_\+element@{stworz\+\_\+element}}
+\index{stworz\+\_\+element@{stworz\+\_\+element}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{stworz\+\_\+element()}{stworz\_element()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ plansza\+::stworz\+\_\+element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{pp,  }\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{pl,  }\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{pd,  }\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{pg }\end{DoxyParamCaption})}
+
+Metoda tworzy element planszy, ktory jest reprezentacja komorki z gry w zycie Pobiera cztery wartosci typu wskaznikowego na obiekt klasy element planszy i zwraca rowniez wskaznik na obiekt klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}}.
+
+W metodzie utworzony jest obiekt klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} i ustawiony na niego wskaznik nowy. Nastepnie ustawiane sa wszystkie wskazniki \char`\"{}sasiadow\char`\"{} na elementy podane w parametrach funkcji. 
+\begin{DoxyParams}{Parametry}
+{\em pp} & wskaznik na komorke sasiadujaca po prawej lub na nullptr gdy tworzony element znajduje sie na prawej krawedzi planszy \\
+\hline
+{\em pl} & wskaznik na komorke sasiadujaca po lewej lub na nullptr gdy tworzony element znajduje sie na lewej krawedzi planszy \\
+\hline
+{\em pd} & wskaznik na komorke sasiadujaca z dolu lub na nullptr gdy tworzony element znajduje sie na dolnej krawedzi planszy \\
+\hline
+{\em pg} & wskaznik na komorke sasiadujaca z gory lub na nullptr gdy tworzony element znajduje sie na gornej krawedzi planszy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nowy -\/ wskaznik na nowo utworzony obiekt klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}}. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_ab58b287ec128257badf582e1ce7ea11e_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_ab58b287ec128257badf582e1ce7ea11e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_a560279ec20a1cd126141f27f5f177a2c}\label{classplansza_a560279ec20a1cd126141f27f5f177a2c}} 
+\index{plansza@{plansza}!stworz\+\_\+podstawowa\+\_\+plansze@{stworz\+\_\+podstawowa\+\_\+plansze}}
+\index{stworz\+\_\+podstawowa\+\_\+plansze@{stworz\+\_\+podstawowa\+\_\+plansze}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{stworz\+\_\+podstawowa\+\_\+plansze()}{stworz\_podstawowa\_plansze()}}
+{\footnotesize\ttfamily void plansza\+::stworz\+\_\+podstawowa\+\_\+plansze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda tworzy plansze o boku rownym polu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} -\/ rozmiar , na ktorej bedzie odbywala sie gra w zycie. Nie pobiera zadnych parametrow i nic nie zwraca.
+
+Gdy pole rozmiar jest rowne 0 plansza w ogole sie nie tworzy. Jesli nie, funkcja najpierw tworzy glowna kolumne o dlugosci rozmiar, nastepnie tworzy kolejne kolumny, ktorych jest rowniez rozmiar. W metodzie wykozystane sa trzy wskazniki chwilowe\+: tmp\+\_\+w\+\_\+dol -\/ do przesuwania sie w dol po utworzonej lewej kolumnie i laczenia elementow wskaznikami pprawy z nowo tworzonymi. tmp\+\_\+prawy\+\_\+w\+\_\+dol -\/ do przesuwania sie w dol i tworzenia nowej kolumny oraz laczenia jej z utworzona po lewej za pomoca wskaznikow plewy. tmp\+\_\+w\+\_\+prawo -\/ do przesuniecia powyzszych wskaznikow w prawo tak aby tmp\+\_\+w\+\_\+dol wskazywal na pierwszy el istniejacej kolumny, a tmp\+\_\+prawy\+\_\+w\+\_\+dol na pierwszy nowo utworzony w nastepnej. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a560279ec20a1cd126141f27f5f177a2c_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_a560279ec20a1cd126141f27f5f177a2c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classplansza_afbbb011300c83927a042e5d2c0a6820d}\label{classplansza_afbbb011300c83927a042e5d2c0a6820d}} 
+\index{plansza@{plansza}!usun\+\_\+plansze@{usun\+\_\+plansze}}
+\index{usun\+\_\+plansze@{usun\+\_\+plansze}!plansza@{plansza}}
+\subsubsection{\texorpdfstring{usun\+\_\+plansze()}{usun\_plansze()}}
+{\footnotesize\ttfamily void plansza\+::usun\+\_\+plansze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda usuwa plansze do gry w zycie. Nic nie pobiera i nic nie zwraca.
+
+Metoda ustawia wskaznik chwilowy tmp na adres wskazywany przez wskaznik ppoczatkowy po czym przesuwa wskaznik ppoczatkowy w prawo. Nastepnie usuwa komorke wskazywana przez tmp oraz ustawia wskaznik plewy komorki wskazywanej przez ppoczatkowy na nullptr. Kiedy wskaznik ppoczatkowy \char`\"{}dojdzie\char`\"{} do prawej krawedzi planszy, jesli to mozliwe, przesuwa sie w dol i wykonywana jest ten sam algorytm na nastepnym wierszy, tylko w lewo. Ostatni usuniety element ma wszystkie wskazniki \char`\"{}sasiadow\char`\"{} ustawione na nullptr poza pgorny. Taka sytuacja spelnia instrukcje warunkowa else if i ustawia wskaznik ppoczatkowy na nullptr i pozwala na wyjscie z petli while. Metoda zostala stworzona aby zapobiedz wyciekowi pamieci. Jest uzyta w destruktorze, dzieki czemu przy usuwaniu obiektu klasy plansza zostaje zwolniona pamiec zajmowana przez wszystkie elementy planszy. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classplansza_afbbb011300c83927a042e5d2c0a6820d_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classplansza_afbbb011300c83927a042e5d2c0a6820d_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__plansza_8h}{klasa\+\_\+plansza.\+h}}\item 
+\mbox{\hyperlink{metody__plansza_8cpp}{metody\+\_\+plansza.\+cpp}}\end{DoxyCompactItemize}

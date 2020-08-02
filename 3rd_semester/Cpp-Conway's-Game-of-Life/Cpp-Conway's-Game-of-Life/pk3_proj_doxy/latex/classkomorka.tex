@@ -1,0 +1,71 @@
+\hypertarget{classkomorka}{}\section{Dokumentacja klasy komorka}
+\label{classkomorka}\index{komorka@{komorka}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+komorka.\+h$>$}
+
+
+
+Diagram dziedziczenia dla komorka
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classkomorka__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla komorka\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classkomorka__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classkomorka_adce4e335e2839bbb388cfb9f43ddd51e}{ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw}} ()
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do \char`\"{}ozywiania i zabijania komorek\char`\"{}. Dziedziczy po klasie sasiedzi i dodaje tylko jedna metode. Nie zawiera dodatkowychy pol. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classkomorka_adce4e335e2839bbb388cfb9f43ddd51e}\label{classkomorka_adce4e335e2839bbb388cfb9f43ddd51e}} 
+\index{komorka@{komorka}!ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw@{ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw}}
+\index{ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw@{ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw}!komorka@{komorka}}
+\subsubsection{\texorpdfstring{ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw()}{ozyw\_zabij\_lub\_zostaw()}}
+{\footnotesize\ttfamily void komorka\+::ozyw\+\_\+zabij\+\_\+lub\+\_\+zostaw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda w zaleznosci od ilosci sasiadow komorki zabija ozywia lub zostawia w poprzednim stanie komorke.
+
+Metoda uzywa dwoch wskaznikow pomocniczych. Pierwszy, tmp\+\_\+lista jest uzyty do przechodzenia listy sasiadow i odczytywania z niej wartosci. Drugi, tmp jest uzyty do przechodzenia planszy \char`\"{}wezykiem w dol\char`\"{}(wywolana jest do tego metoda klasy sasiedzi przesun\+\_\+wezykiem\+\_\+w\+\_\+dol) i sprawdzania oraz ustawiania stanu komorek w zaleznosci od ilosci sasiadow pod wskaznikiem tmp\+\_\+lista. Metoda lapie ewentualne wyjatki wyrzucone przez uzyte w niej inne metody. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classkomorka_adce4e335e2839bbb388cfb9f43ddd51e_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classkomorka_adce4e335e2839bbb388cfb9f43ddd51e_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__komorka_8h}{klasa\+\_\+komorka.\+h}}\item 
+\mbox{\hyperlink{metody__komorka_8cpp}{metody\+\_\+komorka.\+cpp}}\end{DoxyCompactItemize}

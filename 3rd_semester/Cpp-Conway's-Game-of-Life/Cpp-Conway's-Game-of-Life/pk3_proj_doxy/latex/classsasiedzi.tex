@@ -1,0 +1,306 @@
+\hypertarget{classsasiedzi}{}\section{Dokumentacja klasy sasiedzi}
+\label{classsasiedzi}\index{sasiedzi@{sasiedzi}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+sasiedzi.\+h$>$}
+
+
+
+Diagram dziedziczenia dla sasiedzi
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classsasiedzi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla sasiedzi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classsasiedzi__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsasiedzi_ac74c7627b37fab5063203ec1d1a1d0f8}{sasiedzi}} ()
+\item 
+\mbox{\hyperlink{classsasiedzi_a37e4c37e8d5aa38f1f18dee6b3a876e8}{$\sim$sasiedzi}} ()
+\item 
+void \mbox{\hyperlink{classsasiedzi_a1c5e1efc2810b7d408012cf3a82cf719}{rozszerz\+\_\+w\+\_\+dobra\+\_\+strone}} ()
+\item 
+\mbox{\hyperlink{classelement__listy__sasiadow}{element\+\_\+listy\+\_\+sasiadow}} $\ast$ \mbox{\hyperlink{classsasiedzi_a17ed824bb9a4791c2c4f3e88719b0005}{operator+=}} (int l\+\_\+s)
+\item 
+void \mbox{\hyperlink{classsasiedzi_a7008b4aa9ff4ad86aafe65e6afc063b7}{dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow}} (int l\+\_\+s)
+\item 
+void \mbox{\hyperlink{classsasiedzi_a10de1cc6691650a783a289b17f0769ce}{usun\+\_\+liste\+\_\+sasiadow}} ()
+\item 
+int \mbox{\hyperlink{classsasiedzi_a5d5fc98d8d077013af180ea83404c7a8}{sprawdz\+\_\+czy\+\_\+krawedz}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$el)
+\item 
+void \mbox{\hyperlink{classsasiedzi_a5f50acc6fb740edf64619f2d3976dcb9}{przesun\+\_\+wezykiem\+\_\+w\+\_\+dol}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$\&el, \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$\&el\+\_\+za)
+\item 
+void \mbox{\hyperlink{classsasiedzi_afe22b3109116d244e1601923e52e7ddf}{policz\+\_\+sasiadow}} ()
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classplansza}{plansza}} $\ast$ \mbox{\hyperlink{classsasiedzi_ad77b7ebc8a7e745a1ecd0bc54a917ad8}{ob}}
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classelement__listy__sasiadow}{element\+\_\+listy\+\_\+sasiadow}} $\ast$ \mbox{\hyperlink{classsasiedzi_a00fb2c23e06fb619f6db150bcd7fa23f}{pglowa}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do zliczania sasiadow komore planszy do gry w zycie. Jest klasa bazowa klasy komorka 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classsasiedzi_ac74c7627b37fab5063203ec1d1a1d0f8}\label{classsasiedzi_ac74c7627b37fab5063203ec1d1a1d0f8}} 
+\index{sasiedzi@{sasiedzi}!sasiedzi@{sasiedzi}}
+\index{sasiedzi@{sasiedzi}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{sasiedzi()}{sasiedzi()}}
+{\footnotesize\ttfamily sasiedzi\+::sasiedzi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Konstruktor klasy sasiedzi. Utworzony, aby ustawiac pole pglowa na nullptr przy tworzeniu nowego obiektu. \mbox{\Hypertarget{classsasiedzi_a37e4c37e8d5aa38f1f18dee6b3a876e8}\label{classsasiedzi_a37e4c37e8d5aa38f1f18dee6b3a876e8}} 
+\index{sasiedzi@{sasiedzi}!````~sasiedzi@{$\sim$sasiedzi}}
+\index{````~sasiedzi@{$\sim$sasiedzi}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{$\sim$sasiedzi()}{~sasiedzi()}}
+{\footnotesize\ttfamily sasiedzi\+::$\sim$sasiedzi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destruktor klasy sasiedzi. Utworzony, aby dodatkwo zwalniac pamiec zajmowana przez liste sasiadow (wywolana funkcja usun\+\_\+liste\+\_\+sasiadow). Jesli pole pglowa na cos wskazuje, zostaje to usuniete. Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a37e4c37e8d5aa38f1f18dee6b3a876e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classsasiedzi_a7008b4aa9ff4ad86aafe65e6afc063b7}\label{classsasiedzi_a7008b4aa9ff4ad86aafe65e6afc063b7}} 
+\index{sasiedzi@{sasiedzi}!dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow@{dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow}}
+\index{dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow@{dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow()}{dodaj\_na\_koniec\_listy\_sasiadow()}}
+{\footnotesize\ttfamily void sasiedzi\+::dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow (\begin{DoxyParamCaption}\item[{int}]{l\+\_\+s }\end{DoxyParamCaption})}
+
+Metoda dodaje nowy element na koniec listy sasiadow.
+
+W metodzie uzyty jest przeciazony operator arytmetyczny +=. 
+\begin{DoxyParams}{Parametry}
+{\em l\+\_\+s} & liczba sasiadow komorki, ktora ma byc dodana do listy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classsasiedzi_a7008b4aa9ff4ad86aafe65e6afc063b7_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a7008b4aa9ff4ad86aafe65e6afc063b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_a17ed824bb9a4791c2c4f3e88719b0005}\label{classsasiedzi_a17ed824bb9a4791c2c4f3e88719b0005}} 
+\index{sasiedzi@{sasiedzi}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__listy__sasiadow}{element\+\_\+listy\+\_\+sasiadow}} $\ast$ sasiedzi\+::operator+= (\begin{DoxyParamCaption}\item[{int}]{l\+\_\+s }\end{DoxyParamCaption})}
+
+Przeciazony operator arytmetyczny +=, ktory sluzy do dodawania elementow na koniec listy sasiadow. 
+\begin{DoxyParams}{Parametry}
+{\em l\+\_\+s} & liczba sasiadow komorki, ktora ma byc dodana do listy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nowy przeksztalcony wskaznik na pierwszy element listy sasiadow. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a17ed824bb9a4791c2c4f3e88719b0005_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_afe22b3109116d244e1601923e52e7ddf}\label{classsasiedzi_afe22b3109116d244e1601923e52e7ddf}} 
+\index{sasiedzi@{sasiedzi}!policz\+\_\+sasiadow@{policz\+\_\+sasiadow}}
+\index{policz\+\_\+sasiadow@{policz\+\_\+sasiadow}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{policz\+\_\+sasiadow()}{policz\_sasiadow()}}
+{\footnotesize\ttfamily void sasiedzi\+::policz\+\_\+sasiadow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda liczy sasiadow wszystkich komorek w planszy i dodaje ich liczbe na koniec listy sasiadow.
+
+W metodzie wywolane sa prawie wszytkie metody klasy sasiedzi. Na poczatku plansza jest rozszerzona w odpowiednie strony (metoda rozszerz\+\_\+w\+\_\+dobra\+\_\+strone), aby moc sprawdzic ilosc sasiadow komorek, ktore wczesniej nie istnialy. Zainicjowane sa wskazniki pomocnicze do przechodzenia planszy i liczenia sasiadow. W petli najpierw sprawdzana jest pozycja komorki(metoda sprawdz\+\_\+czy\+\_\+krawedz). Nastepnie w zaleznosci od wartosci zwroconej przez metode sprawdz\+\_\+czy\+\_\+krawedz(czytaj opis tej metody) sprawdzana jest ilosc sasiadow. Ilosc ta jest dodana na koniec listy sasiadow(metoda dodaj\+\_\+na\+\_\+koniec\+\_\+listy\+\_\+sasiadow). operacja powtarzana az zostana zliczeni sasiedzi wszystkich komorek rozszerzonej planszy. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_afe22b3109116d244e1601923e52e7ddf_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_afe22b3109116d244e1601923e52e7ddf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_a5f50acc6fb740edf64619f2d3976dcb9}\label{classsasiedzi_a5f50acc6fb740edf64619f2d3976dcb9}} 
+\index{sasiedzi@{sasiedzi}!przesun\+\_\+wezykiem\+\_\+w\+\_\+dol@{przesun\+\_\+wezykiem\+\_\+w\+\_\+dol}}
+\index{przesun\+\_\+wezykiem\+\_\+w\+\_\+dol@{przesun\+\_\+wezykiem\+\_\+w\+\_\+dol}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{przesun\+\_\+wezykiem\+\_\+w\+\_\+dol()}{przesun\_wezykiem\_w\_dol()}}
+{\footnotesize\ttfamily void sasiedzi\+::przesun\+\_\+wezykiem\+\_\+w\+\_\+dol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$\&}]{el,  }\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$\&}]{el\+\_\+za }\end{DoxyParamCaption})}
+
+Metoda przesuwa wskaznik po planszy \char`\"{}wezykiem w dol\char`\"{}.
+
+Metoda przesuwa wskaznik podany jako parametr el o jedna pozycje. Najpierw do konca w prawo, jak juz sie nie da, raz w dol, potem w lewo. Przesuniecie jest mozliwe dopoki wskaznik na dolnego sasiada wskazuje na cos. 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na element planszy (do przesuniecia) \\
+\hline
+{\em el\+\_\+za} & wskaznik na element za el w sensie przechodzenia wezykiem w dol(wskazuje na sasiada po lewej, jak metoda przesuwa w prawo, odwrotnie gdy w lewo) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a5f50acc6fb740edf64619f2d3976dcb9_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a5f50acc6fb740edf64619f2d3976dcb9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_a1c5e1efc2810b7d408012cf3a82cf719}\label{classsasiedzi_a1c5e1efc2810b7d408012cf3a82cf719}} 
+\index{sasiedzi@{sasiedzi}!rozszerz\+\_\+w\+\_\+dobra\+\_\+strone@{rozszerz\+\_\+w\+\_\+dobra\+\_\+strone}}
+\index{rozszerz\+\_\+w\+\_\+dobra\+\_\+strone@{rozszerz\+\_\+w\+\_\+dobra\+\_\+strone}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{rozszerz\+\_\+w\+\_\+dobra\+\_\+strone()}{rozszerz\_w\_dobra\_strone()}}
+{\footnotesize\ttfamily void sasiedzi\+::rozszerz\+\_\+w\+\_\+dobra\+\_\+strone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda rozszerza plansze do gry w zycie w odpowiedna strone
+
+Metoda uzywa pomocniczych wskaznikow i przesuwa jeden z nich wokol planszy sprawdzajac, czy na krawedzi jest jakas zywa komorka. Jesli tak, plansza jest rozszerzana(wywolana jest odpowiednia metoda klasy plansza) w strone krawedzi przy ktorej znaleziona zostala zywa komorka. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a1c5e1efc2810b7d408012cf3a82cf719_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a1c5e1efc2810b7d408012cf3a82cf719_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_a5d5fc98d8d077013af180ea83404c7a8}\label{classsasiedzi_a5d5fc98d8d077013af180ea83404c7a8}} 
+\index{sasiedzi@{sasiedzi}!sprawdz\+\_\+czy\+\_\+krawedz@{sprawdz\+\_\+czy\+\_\+krawedz}}
+\index{sprawdz\+\_\+czy\+\_\+krawedz@{sprawdz\+\_\+czy\+\_\+krawedz}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{sprawdz\+\_\+czy\+\_\+krawedz()}{sprawdz\_czy\_krawedz()}}
+{\footnotesize\ttfamily int sasiedzi\+::sprawdz\+\_\+czy\+\_\+krawedz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+Metoda sprawdza polozenie komorki i w zaleznosci od niego zwraca odpowiednia liczbe.
+
+Znaczenie zwracanej liczby, to lokalizacja komorki w\+: 0 -\/ prawa krawedz 10 -\/ prawy dolny rog 20 -\/ prawy gorny rog 1 -\/ lewa krawedz 11 -\/ lewy dolny rog 21 -\/ lewy gorny rog 2 -\/ dolna krawedz 3 -\/ gorna krawedz Dzieki tej metodzie metoda policz\+\_\+sasiadow nie sprawdza sasiadow, ktorzy nie maja prawa byc zywymi. 
+\begin{DoxyParams}{Parametry}
+{\em el} & wskaznik na komorke, ktorej lokalizacje chcemy poznac. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+liczba odpowiadajaca lokalizacji komorki. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a5d5fc98d8d077013af180ea83404c7a8_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a5d5fc98d8d077013af180ea83404c7a8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classsasiedzi_a10de1cc6691650a783a289b17f0769ce}\label{classsasiedzi_a10de1cc6691650a783a289b17f0769ce}} 
+\index{sasiedzi@{sasiedzi}!usun\+\_\+liste\+\_\+sasiadow@{usun\+\_\+liste\+\_\+sasiadow}}
+\index{usun\+\_\+liste\+\_\+sasiadow@{usun\+\_\+liste\+\_\+sasiadow}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{usun\+\_\+liste\+\_\+sasiadow()}{usun\_liste\_sasiadow()}}
+{\footnotesize\ttfamily void sasiedzi\+::usun\+\_\+liste\+\_\+sasiadow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda usuwa i zwalnia pamiec po liscie sasiadow. Metoda wywolana w destruktorze. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a10de1cc6691650a783a289b17f0769ce_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsasiedzi_a10de1cc6691650a783a289b17f0769ce_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classsasiedzi_ad77b7ebc8a7e745a1ecd0bc54a917ad8}\label{classsasiedzi_ad77b7ebc8a7e745a1ecd0bc54a917ad8}} 
+\index{sasiedzi@{sasiedzi}!ob@{ob}}
+\index{ob@{ob}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{ob}{ob}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classplansza}{plansza}}$\ast$ sasiedzi\+::ob}
+
+Pole ob jest wskaznikiem na obiekt klasy plansza. Takie rozwiazanie zostalo zastosowane zamiast dziedziczenia po klasie \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}, aby nie tworzyc tymczasowego obiektu klasy plansza do wywolania metod do rozszerzania planszy. \mbox{\Hypertarget{classsasiedzi_a00fb2c23e06fb619f6db150bcd7fa23f}\label{classsasiedzi_a00fb2c23e06fb619f6db150bcd7fa23f}} 
+\index{sasiedzi@{sasiedzi}!pglowa@{pglowa}}
+\index{pglowa@{pglowa}!sasiedzi@{sasiedzi}}
+\subsubsection{\texorpdfstring{pglowa}{pglowa}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__listy__sasiadow}{element\+\_\+listy\+\_\+sasiadow}}$\ast$ sasiedzi\+::pglowa\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pole pglowa jest wskaznikiem na pierwszy element listy sasiadow. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__sasiedzi_8h}{klasa\+\_\+sasiedzi.\+h}}\item 
+\mbox{\hyperlink{metody__sasiedzi_8cpp}{metody\+\_\+sasiedzi.\+cpp}}\end{DoxyCompactItemize}

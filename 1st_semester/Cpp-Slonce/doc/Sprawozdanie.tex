@@ -1,0 +1,267 @@
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}                                      
+\usepackage[OT4]{fontenc}      
+%\usepackage[T1]{fontenc}                            
+\usepackage[polish]{babel}                           
+\selectlanguage{polish}
+\usepackage{indentfirst} 
+\usepackage[dvips]{graphicx}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{ifpdf}
+\usepackage{mathtext} % polskie znaki w trybie matematycznym
+%\makeindex  % utworzenie skorowidza (w dokumencie pdf)
+\usepackage{lmodern}
+%\usepackage[osf]{libertine}
+\usepackage{filecontents}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\newcounter{nextYear}
+\setcounter{nextYear}{\the\year}
+\stepcounter{nextYear}
+
+% rozszerzenie nieco strony
+%\setlength{\topmargin}{-1cm} \setlength{\textheight}{24.5cm}
+%\setlength{\textwidth}{17cm} \addtolength{\hoffset}{-1.5cm}
+%\setlength{\parindent}{0.5cm} \setlength{\footskip}{2cm}
+%\linespread{1.2} % odstep pomiedzy wierszami
+
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+
+\newcommand{\tl}[1]{\textbf{#1}} 
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} % usuwanie bieżących ustawień
+\fancyhead[LE,RO]{\small\bfseries\thepage}
+\fancyhead[LO]{\small\bfseries\rightmark}
+\fancyhead[RE]{\small\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % pionowy odstęp na kreskę
+\fancypagestyle{plain}{%
+\fancyhead{} % usuń p. górne na stronach pozbawionych numeracji
+\renewcommand{\headrulewidth}{0pt} % pozioma kreska
+}
+
+% ustawienia listingu programow
+%\lstset{	language=C++, 
+%        	numbers=left, 
+%        	numberstyle=\tiny, 
+%        	stepnumber=1, 
+%        	numbersep=5pt,
+%		  	stringstyle=\ttfamily,
+%			showstringspaces=false,
+% 			tabsize=4
+%		}
+
+\lstset{%
+language=C++,%
+commentstyle=\textit,%
+identifierstyle=\textsf,%
+keywordstyle=\sffamily\bfseries, %
+%captionpos=b,%
+tabsize=3,%
+frame=lines,%
+numbers=left,%
+numberstyle=\tiny,%
+numbersep=5pt,%
+breaklines=true,%
+morekeywords={pWezel,Wezel,string,ref,params_result,time_t},%
+escapeinside={(*@}{@*)},%
+%basicstyle=\footnotesize,%
+%keywords={double,int,for,if,return,vector,matrix,void,public,class,string,%
+%float,sizeof,char,FILE,while,do,const}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% mala zmiana sposobu wyswietlania notek bocznych
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{%
+  {\linespread{0.85}\normalfont\scriptsize%
+%   \oldmarginpar[\vspace{-1.5ex}\raggedleft\scriptsize\color{black}\textsf{#1}]%    left pages
+%                {\vspace{-1.5ex}\raggedright\scriptsize\color{black}\textsf{#1}}% right pades
+\oldmarginpar[\hspace{1cm}\begin{minipage}{3cm}\raggedleft\scriptsize\color{black}\textsf{#1}\end{minipage}]%    left pages
+{\hspace{0cm}\begin{minipage}{3cm}\raggedright\scriptsize\color{black}\textsf{#1}\end{minipage}}% right pages
+}%
+}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\begin{document}
+\frenchspacing
+\thispagestyle{empty}
+\begin{center}
+{\Large\sf Politechnika Śląska w Gliwicach   % Alma Mater
+
+Wydział Automatyki, Elektroniki i Informatyki
+
+}
+
+\vfill
+
+%\includegraphics[width=0.15\textwidth]{graf/polsl.pdf}
+
+\vfill\vfill
+
+{\Huge\sffamily\bfseries Podstawy Programowania Komputerów} \\ % tu podać nazwę przedmiotu
+
+\vfill\vfill
+
+{\LARGE\sf Słońce}  % a tu temat laborki :-)
+
+
+\vfill \vfill\vfill\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{tabular}{ll}
+\toprule
+	autor                                                  & Tomasz Sojka          \\
+	prowadzący                                             & dr inż. Krzysztof Simiński       \\
+	rok akademicki                                         & \the\year/\arabic{nextYear} \\
+	kierunek                                               & informatyka                 \\
+	rodzaj studiów                                         & SSI                         \\
+	semestr                                                & 1                           \\
+	termin laboratorium / ćwiczeń                          & poniedziałek, 08:30 -- 10:00      \\
+	grupa                                                  & 2                           \\
+	sekcja                                                 & 6                           \\
+	termin oddania sprawozdania                            & \the\year-12-01             \\
+	data oddania sprawozdania                              & \the\year-12-01             \\
+\bottomrule &  \\
+\end{tabular}
+
+\end{center}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Treść zadania}
+Napisac program wyznaczajacy godzine wschodu i zachodu Słonca dla podanych dni i podanej lokalizacji
+na Ziemi.
+Program uruchamiany jest z linii poleceń z wykorzystaniem następujących przełączników:
+ 
+\begin{tabular}{ll}
+\texttt{-o}  & nazwa pliku wyjściowego\\
+\texttt{-s}  & data poczatkowa w formacie rrrr-mm-dd, np. 2017-10-14\\
+\texttt{-k}  & data koncowa w formacie rrrr-mm-dd\\
+\texttt{--lon}  & długosc geograficzna w stopniach\\
+\texttt{} &(dodatnia na wschodzie, ujemna na zachodzie)\\
+\texttt{--lat}  & szerokosc geograficzna w stopniach \\
+\texttt{} &(dodania na północy, ujemna na południu)\\
+\texttt{-t}  & strefa czasowa\\
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analiza zadania}
+
+
+Zagadnienie przedstawia problem obliczania godzin wschodów i zachodów słońca, dla podanych współrzędnych geograficznych,
+od podanej daty poczatkowej, do końcowej.
+
+\subsection{Struktury danych}
+W programie wykorzystano struktury i typy danych z biblioteki \texttt{time.h} (patrz \ref{sec:sp-wew}). Dane przypisane do struktury tm, otrzymały zakres ??.  
+Zamiana struktury na typ danych \lstinline|time_t| za pomocą funkcji mktime, pozowliła na korekcje danych spoza zakresu na poprawną datę.
+Taka operacja przyspieszyła proces tworzenia programu i ułatwiła dane zadanie.
+
+
+\subsection{Algorytmy}
+W programie użyty został algorytm, który pozwalał na wyliczenie godziny wschodu i zachodu słońca za pomocą astronomicznych danych ziemi. Algorytm korzystał z podanej szerokości, długości geograficznej i podanej daty. Poprzez umieszczenie algorytmu  w pętli (patrz \ref{sec:sp-wew}), program oblicza te godziny od daty początkowej do końcowej . 
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Specyfikacja zewnętrzna}
+\label{sec:sp:zewnetrzna}
+Program jest uruchamiany z linii poleceń. 
+Należy przekazać do programu, po odpowiednich przełącznikach: nazwę pliku wyjściowego, datę początkową, datę końcową, strefę, szerokość i długość geograficzną  (odpowiednio: \texttt{-o} dla pliku wyjściowego , \texttt{-s} dla daty początkowej , \texttt{-k} dla daty końcowej , \texttt{-t} dla strefy , \texttt{--lat} dla szerokości geograficznej , \texttt{--lon} dla długości geograficznej ), np.
+\begin{verbatim}
+program.exe -o Gliwice -s 2017-12-01 -k 2017-12-31 -t 1 
+--lat 50.310 --lon 18.669
+\end{verbatim}
+Pliki są plikami tekstowymi, ale mogą mieć dowolne rozszerzenie (lub go nie mieć.) Przełączniki mogą być podane w dowolnej kolejności. Uruchomienie programu z nieprawidłowymi parametrami lub podanie danych spoza zakresu powoduje wyświetlenie komunikatu 
+\begin{verbatim}
+Nieprawidlowe parametry lub dane spoza zakresu
+\end{verbatim}
+i wyświetlenie pomocy. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Specyfikacja wewnętrzna}\label{sec:sp-wew}
+ Program został zrealizowany zgodnie z paradygmatem strukturalnym.  
+W programie rozdzielono interfejs (komunikację z użytkownikiem) od logiki aplikacji (obliczania godzniy wschodu i zachodu słońca, oraz wpisywania danych do pliku).
+
+\subsection{Ogólna struktura programu}
+W funkcji głównej wywołana jest instrukcja warunkowa if, sprawdzająca czy podane współrzędne geograficzne lub strefa lub rok początkowy lub rok końcowy nie należą do ich zakresu, oraz czy funkcja 
+\begin{lstlisting}
+bool odczytajargumenty(int ile, char * argumenty[], string & nazwa, double & Lat, double & Lon, int & R, int & M, int & D, int & R2, int & M2, int & D2, int & Strefa);
+\end{lstlisting}
+przyjmuje wartość \lstinline!false! (funkcja \lstinline|odczytajargumenty| odczytuje przełączniki programu i sprawdza czy zostały one wprowadzone w prawidłowy sposób). Jeśli instrukcja warunkowa jest spełniona zostaje wyświetlony odpowiedzni komunikat i program kończy się.
+
+Po podaniu prawidłowych parametrów i danych wywoływana jest funkcja 
+\begin{lstlisting}
+funkcjakoncowa(int &R, int &M, int &D, int &R2, int &M2, int &D2, int &Stref, int &sekundy, double &Lat, double &Lon, string &nazwa);
+\end{lstlisting} 
+W tej funkcji zawarta jest cała konstrukcja programu. \\
+Funcja rozpoczyna się od operacji na podanej dacie początkowej. Zadeklarowany jest wskaźnik \lstinline!data! na strukturę tm i zmienna \lstinline!datasek! typu time\_t (czas w sekundach od 01-01-1970, 00:00). Do zmiennej datasek, za pomocą funkcji time, zapisywany jest lokalny czas, który zostaje przekonwertowany i przypisany wskaźnikowi \lstinline!data!. 
+W następnym  kroku wywołane są funkcje:
+\begin{lstlisting}
+wprowadzaniedanych(int R, int M, int D, tm*data);
+time_t timetdata(int R, int M, int D, tm*data, time_t datasek);
+\end{lstlisting}
+Pierwsza z nich służy do przypisania daty początkowej do wskaźnika \lstinline!data!, druga za pomocą funkcji mktime zamienia wcześniej podaną datę początkową na czas typu time\_t i przypisuje go zmiennej \lstinline!datasek!.
+\\* 
+\\* 
+Cała operacja powtarza się dla daty końcowej (wskaźnik na strukture tm --  \lstinline!data2!, zmienna typu time\_t -  \lstinline!datasek2!).
+Następnie za pomocą funkcji difftime liczona jest różnica \lstinline!sekundy! dni od daty początkowej do końcowej (włącznie z datą początkową i końcową). 
+ \\* 
+\\*
+Wywołana jest funkcja:
+\begin{lstlisting}
+wypisywanienaglowka(const string &nazwa, double Lat, double Lon, int Stref);
+\end{lstlisting}
+wypisująca do pliku nagłówek z napisem WSCHODY I ZACHODY SLONCA, oraz danymi: szerokością, długością i strefą.Wypisywane są równeż tytuły kolumn z danymi (data, wschod, zachod).
+ \\* 
+\\*
+Następnym krokiem jest wypisanie za pomocą funkcji:
+\begin{lstlisting}
+wypisywaniegodziny(const string &nazwa, time_t datasek, tm*data, double sekundy, int R, int M, int D, double Lat, double Lon, double Stref);
+\end{lstlisting}
+godzin wschodów i zachodów słońca dla kolejnych dni. Funkcja ta zawiera w pętli for dwie funkcje z algorytmem obliczającym godzinę wschodu i zachodu:
+\begin{lstlisting}
+double obliczeniawschodu(int R, int M, int D, double Lat, double Lon, int Stref);
+double obliczeniazachodu(int R, int M, int D, double Lat, double Lon, int Stref);
+\end{lstlisting}
+oraz wypisuje do pliku te godziny.   
+ Wynik funkcji difftime (\lstinline!sekundy!) jest równy ilości wywołań pętli for. 
+
+\section{Testowanie}
+Program został przetestowany na różnego rodzaju danych. Dni lub miesiące daty początkowej i końcowej mogą nie należeć do zakresu (np. 2000-125-562), są wtedy zamieniane na poprawną datę. Szerokość, długość lub strefa spoza zakresu powodują zgłoszenie błędu. Podanie roku wcześniejszego niż 1970(od wtedy jest liczony czas time\_t wykorzystany w programe) powoduje zgłoszenie błedu. Podanie wcześniejszej daty końcowej od poczatkowej powoduje wypisanie tylko nagłówka. Nie podanie parametru lub podanie błędnego (np. data abcd-de-fg) powoduje zgłoszenie błędu. 
+
+
+\section{Wnioski}
+
+
+Program Słońce, choć wydaje się być prostym programem, początkującemu programiście sprawi wiele problemów. Program wymaga zastosowania wielu instrukcji warunkowych, aby program działał poprawnie dla każdych współrzędnych i każdego dnia. Największymi problemami podczas wykonania zadania były operacje na bibliotece time.h,  tworzenie funkcji odczytującej parametry i ograniczenie czasowe, oraz konieczność nauki innych przedmiotów.
+
+Program dla większości danych generuje się poprawnie, lecz brak w nim instrukcji warunkowej związanej z nocami i dniami polarnymi.
+
+
+\end{document}
+% Koniec wieńczy dzieło.

@@ -1,0 +1,183 @@
+\hypertarget{classdane__planszy}{}\section{Dokumentacja klasy dane\+\_\+planszy}
+\label{classdane__planszy}\index{dane\+\_\+planszy@{dane\+\_\+planszy}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+dane\+\_\+planszy.\+h$>$}
+
+
+
+Diagram dziedziczenia dla dane\+\_\+planszy
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla dane\+\_\+planszy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classdane__planszy__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ \mbox{\hyperlink{classdane__planszy_a1b6f7b4b0a06da4407bea609c48441ce}{get\+\_\+pocz}} ()
+\item 
+int \mbox{\hyperlink{classdane__planszy_a67238befe224aca22577d787df2dffa9}{get\+\_\+roz}} ()
+\item 
+void \mbox{\hyperlink{classdane__planszy_abd328051f43a94315eccb2a80fcb4593}{set\+\_\+pocz}} (\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$pp)
+\item 
+void \mbox{\hyperlink{classdane__planszy_a9516490206327f9bd83eeffc6c8180bb}{set\+\_\+roz}} (int r)
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ \mbox{\hyperlink{classdane__planszy_abf638c9ebf42b2b56c093f427310d7a5}{ppoczatkowy}}
+\item 
+int \mbox{\hyperlink{classdane__planszy_a529f943e243c16c773e0753ffa945223}{rozmiar}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa zawiera podtawowe dane planszy do gry w zycie. Jest klasa bazowa klas\+: plansza, wyjwietl, \mbox{\hyperlink{classwypelnij}{wypelnij(po ktorej dziedziczy klasa wspolrzedne)}}. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classdane__planszy_a1b6f7b4b0a06da4407bea609c48441ce}\label{classdane__planszy_a1b6f7b4b0a06da4407bea609c48441ce}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!get\+\_\+pocz@{get\+\_\+pocz}}
+\index{get\+\_\+pocz@{get\+\_\+pocz}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{get\+\_\+pocz()}{get\_pocz()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ dane\+\_\+planszy\+::get\+\_\+pocz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda zwraca pole ppoczatkowy.
+
+Metoda zostala stworzona aby uzyskac dostep do pola ppoczatkowy przez klasy niezaprzyjaznione i niepochodne. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. \begin{DoxyReturn}{Zwraca}
+ppoczatkowy, jesli jest dotep do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}. Jesli nie, zwraca nullptr. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_a1b6f7b4b0a06da4407bea609c48441ce_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_a1b6f7b4b0a06da4407bea609c48441ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdane__planszy_a67238befe224aca22577d787df2dffa9}\label{classdane__planszy_a67238befe224aca22577d787df2dffa9}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!get\+\_\+roz@{get\+\_\+roz}}
+\index{get\+\_\+roz@{get\+\_\+roz}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{get\+\_\+roz()}{get\_roz()}}
+{\footnotesize\ttfamily int dane\+\_\+planszy\+::get\+\_\+roz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda zwraca pole rozmiar.
+
+Metoda zostala stworzona aby uzyskac dostep do pola rozmiar przez klasy niezaprzyjaznione i niepochodne. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. \begin{DoxyReturn}{Zwraca}
+rozmiar, jesli jest dotep do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}. Jesli nie, zwraca -\/1. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classdane__planszy_a67238befe224aca22577d787df2dffa9_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_a67238befe224aca22577d787df2dffa9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdane__planszy_abd328051f43a94315eccb2a80fcb4593}\label{classdane__planszy_abd328051f43a94315eccb2a80fcb4593}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!set\+\_\+pocz@{set\+\_\+pocz}}
+\index{set\+\_\+pocz@{set\+\_\+pocz}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{set\+\_\+pocz()}{set\_pocz()}}
+{\footnotesize\ttfamily void dane\+\_\+planszy\+::set\+\_\+pocz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{pp }\end{DoxyParamCaption})}
+
+Metoda ustawia pole ppoczatkowy.
+
+Metoda zostala stworzona aby uzyskac dostep i pozwolic na zmiane wartosci pola ppoczatkowy przez klasy niezaprzyjaznione i niepochodne. Do pola przypisywana jest wartosc przekazana przez argument. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em pp} & wskaznik na komorke w lewym gornym rogu. \\
+\hline
+\end{DoxyParams}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_abd328051f43a94315eccb2a80fcb4593_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_abd328051f43a94315eccb2a80fcb4593_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classdane__planszy_a9516490206327f9bd83eeffc6c8180bb}\label{classdane__planszy_a9516490206327f9bd83eeffc6c8180bb}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!set\+\_\+roz@{set\+\_\+roz}}
+\index{set\+\_\+roz@{set\+\_\+roz}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{set\+\_\+roz()}{set\_roz()}}
+{\footnotesize\ttfamily void dane\+\_\+planszy\+::set\+\_\+roz (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})}
+
+Metoda ustawia pole rozmiar.
+
+Metoda zostala stworzona aby uzyskac dostep i pozwolic na zmiane wartosci pola rozmiar przez klasy niezaprzyjaznione i niepochodne. Do pola przypisywana jest wartosc przekazana przez argument. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}} (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em r} & dlugosc boku podstawowej planszy kwadratowej. \\
+\hline
+\end{DoxyParams}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classdane__planszy_a9516490206327f9bd83eeffc6c8180bb_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdane__planszy_a9516490206327f9bd83eeffc6c8180bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classdane__planszy_abf638c9ebf42b2b56c093f427310d7a5}\label{classdane__planszy_abf638c9ebf42b2b56c093f427310d7a5}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!ppoczatkowy@{ppoczatkowy}}
+\index{ppoczatkowy@{ppoczatkowy}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{ppoczatkowy}{ppoczatkowy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}}$\ast$ dane\+\_\+planszy\+::ppoczatkowy\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pole ppoczatkowy jest wskaznikiem na pierwszy element planszy, ktory znajduje sie w lewym gornym rogu. \mbox{\Hypertarget{classdane__planszy_a529f943e243c16c773e0753ffa945223}\label{classdane__planszy_a529f943e243c16c773e0753ffa945223}} 
+\index{dane\+\_\+planszy@{dane\+\_\+planszy}!rozmiar@{rozmiar}}
+\index{rozmiar@{rozmiar}!dane\+\_\+planszy@{dane\+\_\+planszy}}
+\subsubsection{\texorpdfstring{rozmiar}{rozmiar}}
+{\footnotesize\ttfamily int dane\+\_\+planszy\+::rozmiar\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pole rozmiar przechowuje rozmiar kwadratowej poczatkowej planszy (dlugosc boku), ktora podal uzytkownik, tak aby zmiescily sie w niej wszystkie komorki do ozywienia. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__dane__planszy_8h}{klasa\+\_\+dane\+\_\+planszy.\+h}}\item 
+\mbox{\hyperlink{metody__dane__planszy_8cpp}{metody\+\_\+dane\+\_\+planszy.\+cpp}}\end{DoxyCompactItemize}

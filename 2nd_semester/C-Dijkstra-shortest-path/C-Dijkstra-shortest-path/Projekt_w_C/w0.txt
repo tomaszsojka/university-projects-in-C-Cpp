@@ -1,0 +1,13 @@
+  0 : Wierzcholek startowy
+  1 : 0->1 , koszt dojscia: 8.70
+  2 : 0->1->10->2 , koszt dojscia: 22.95
+  3 : 0->1->3 , koszt dojscia: 17.70
+  4 : Brak polaczenia
+  5 : 0->1->6->5 , koszt dojscia: 30.70
+  6 : 0->1->6 , koszt dojscia: 25.70
+  7 : Brak polaczenia
+  8 : Brak polaczenia
+  9 : Brak polaczenia
+ 10 : 0->1->10 , koszt dojscia: 15.95
+ 11 : Brak polaczenia
+ 12 : Brak polaczenia

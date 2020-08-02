@@ -1,0 +1,199 @@
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage[utf8]{inputenc}                                      
+\usepackage[OT4]{fontenc}      
+%\usepackage[T1]{fontenc}                            
+\usepackage[polish]{babel}                           
+\selectlanguage{polish}
+\usepackage{indentfirst} 
+\usepackage[dvips]{graphicx}
+\usepackage{tabularx}
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{ifpdf}
+\usepackage{mathtext} % polskie znaki w trybie matematycznym
+%\makeindex  % utworzenie skorowidza (w dokumencie pdf)
+\usepackage{lmodern}
+%\usepackage[osf]{libertine}
+\usepackage{filecontents}
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\newcounter{nextYear}
+\setcounter{nextYear}{\the\year}
+\stepcounter{nextYear}
+
+\newcounter{previousYear}
+\setcounter{previousYear}{\the\year}
+\addtocounter{previousYear}{-2}
+\stepcounter{previousYear}
+
+% rozszerzenie nieco strony
+%\setlength{\topmargin}{-1cm} \setlength{\textheight}{24.5cm}
+%\setlength{\textwidth}{17cm} \addtolength{\hoffset}{-1.5cm}
+%\setlength{\parindent}{0.5cm} \setlength{\footskip}{2cm}
+%\linespread{1.2} % odstep pomiedzy wierszami
+
+\ifpdf
+\DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+
+\newcommand{\tl}[1]{\textbf{#1}} 
+\pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} % usuwanie bieżących ustawień
+\fancyhead[LE,RO]{\small\bfseries\thepage}
+\fancyhead[LO]{\small\bfseries\rightmark}
+\fancyhead[RE]{\small\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt} % pionowy odstęp na kreskę
+\fancypagestyle{plain}{%
+\fancyhead{} % usuń p. górne na stronach pozbawionych numeracji
+\renewcommand{\headrulewidth}{0pt} % pozioma kreska
+}
+
+% ustawienia listingu programow
+%\lstset{	language=C++, 
+%        	numbers=left, 
+%        	numberstyle=\tiny, 
+%        	stepnumber=1, 
+%        	numbersep=5pt,
+%		  	stringstyle=\ttfamily,
+%			showstringspaces=false,
+% 			tabsize=4
+%		}
+
+\lstset{%
+language=C++,%
+commentstyle=\textit,%
+identifierstyle=\textsf,%
+keywordstyle=\sffamily\bfseries, %
+%captionpos=b,%
+tabsize=3,%
+frame=lines,%
+numbers=left,%
+numberstyle=\tiny,%
+numbersep=5pt,%
+breaklines=true,%
+morekeywords={pWezel,Wezel,string,ref,params_result},%
+escapeinside={(*@}{@*)},%
+%basicstyle=\footnotesize,%
+%keywords={double,int,for,if,return,vector,matrix,void,public,class,string,%
+%float,sizeof,char,FILE,while,do,const}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% mala zmiana sposobu wyswietlania notek bocznych
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{%
+  {\linespread{0.85}\normalfont\scriptsize%
+%   \oldmarginpar[\vspace{-1.5ex}\raggedleft\scriptsize\color{black}\textsf{#1}]%    left pages
+%                {\vspace{-1.5ex}\raggedright\scriptsize\color{black}\textsf{#1}}% right pades
+\oldmarginpar[\hspace{1cm}\begin{minipage}{3cm}\raggedleft\scriptsize\color{black}\textsf{#1}\end{minipage}]%    left pages
+{\hspace{0cm}\begin{minipage}{3cm}\raggedright\scriptsize\color{black}\textsf{#1}\end{minipage}}% right pages
+}%
+}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\begin{document}
+\frenchspacing
+\thispagestyle{empty}
+\begin{center}
+{\Large\sf Politechnika Śląska w Gliwicach   % Alma Mater
+
+Wydział Automatyki, Elektroniki i Informatyki
+
+}
+
+\vfill
+
+\includegraphics[width=0.15\textwidth]{graf/polsl.pdf}
+
+\vfill\vfill
+
+{\Huge\sffamily\bfseries Programowanie komputerów } \\ % tu podać nazwę przedmiotu
+
+\vfill\vfill
+
+{\LARGE\sf Projekt w języku C. Znajdywanie najkrótszej ścieżki w grafie skierowanym za pomocą algorytmu dijkstry.}  % a tu temat laborki :-)
+
+
+\vfill \vfill\vfill\vfill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{tabular}{ll}
+\toprule
+	autor                                                    &Tomasz Sojka  \\
+	prowadzący                                             & mgr inż. Maksym Walczak       \\
+	rok akademicki                                         & \arabic{previousYear}/\the\year \\
+	kierunek                                               & informatyka                 \\
+	rodzaj studiów                                         & SSI                         \\
+	semestr                                                & 2                           \\
+	termin laboratorium                           &  czwartek,  10:00 - 11:30\\
+	grupa                                                  & 2                           \\
+	data oddania sprawozdania                              & \the\year-07-09             \\
+\bottomrule &  \\
+\end{tabular}
+
+\end{center}
+%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Działanie programu}
+Po uruchomieniu programu wyświetlona jest prośba o podanie nazwy pliku wejciowego, w którym znajduje się graf. 
+
+Plik ma następującą postać: 
+
+\begin{description}
+  \item[•] Każda krawędź jest podana w osobnej linii i jest zawsze skierowana od lewej do prawej. 
+ \item[•] Pierwsze dwie liczby całkowite są numerami kolejno wierzchołka początkowego i końcowego krawędzi, trzecia liczba zmiennoprzecionkowa (typu double) oznacza długość krawędzi.
+ \item[•]Numery wierzchołków są oddzielone dowolną(lecz niezerową) ilością znaków białych, zaś długość jest oddzielona dowolnym znakiem lub słowem oraz dowolną ilością znaków białych przed i/lub po słowie. 
+\end{description}
+
+Przykład (Przykładowe pliki tekstowe znajdują się w folderze dat): \\
+1  3 :  14.50\\
+2	7dlugosc65.90\\
+3 5 odleglosc:	34.56\\ \\
+
+Jeżeli plik nie został odnaleziony zostaje wyświetlony odpowiedni komunikat i program się kończy. Jeżeli udało się otworzyć plik: wymiary grafu tj. największy nr wierzchołka i ilość krawędzi zostają zapisane do struktury graf, a wszystkie krawędzie zostają zapisane do listy jednokierunkowej struktury dane. \\
+
+Graf zostaje przepisany do listy sąsiedztwa, której główną kolumnę stanowi tablica struktury wierzchołek o długości równej największemu nr wierzchołka + 1. Komórki tej kolumny zawierają numery wierzchołków i wskaźniki na początki list jednokierunkowych struktury krawedz. Elementy list składają się z wagi krawędzi oraz wskaźnika na wierzchołek koncowy krawędzi(na element głównej kolumny).\\ 
+
+Zainicjowane zostają tablice potrzebne do użycia algorytmu dijkstry: tablica struktury sciezka, zawierająca koszt dotarcia do wierzchołka i numer poprzednika oraz tablica typu bool, w której będzie oznaczone, czy wierzchołek został przetworzony przez algorytm. Początkowo dla wszystkich elementów koszt dotarcia ustawiany jest na długość wszystkich krawędzi + 1(wartość większa niż długość dowolnej ścieżki w grafie), nr poprzednika na -1(nie istnieje wierzchołek o takim numerze), a wszystkie elementy tablicy bool na false(nie odwiedzone).\\
+
+
+
+
+Następnie program pyta użytkownika o numer wierzchołka startowego. Program jest zabezpieczony przed podaniem znaku lub ciągu znaków niebędących numerem wierzchołka należącego do grafu oraz czeka, aż użytkownik poda poprawny numer. Kiedy to nastąpi koszt dotarcia do wierzchołka startowego jest ustawiany na 0 i zaczyna się działanie algorytmu dijkstry.\\
+
+ Po przetworzeniu danych tablica struktury sciezka jest zapełniona. Wykorzystując tą tablicę program tworzy dwuwymiarową tablicę typu int, w której zostaną zapisane najkrótsze ścieżki prowadzące do wierzchołków. Jeżeli nie ma połączenia w kierunku wierzchołka zostaje wpisana wartość -1.\\
+
+Program pyta użytkownika o podanie nazwy pliku wyjściowego. Tablica ze ścieżkami jest interpretowana i program wyświetla oraz zapisuje do pliku trasy oraz koszty przejścia ścieżki. Jeżeli nie ma połączenia w kierunku danego wierzchołka wypisywany jest napis ”Brak polaczenia”. Wierzchołek startowy jest oznaczony.\\ \\
+ Przykład: \\
+0 : Brak polaczenia\\
+1 : 2-$>$1 : 12.34 \\
+2 : Wierzcholek startowy\\
+3 : 2-$>$5-$>$3 : 37.05 \\
+5 : 2-$>$5 : 34.65 \\
+6 : 2-$>$5-$>$3-$>$6 : 78.67\\
+7 : Brak polaczenia\\
+8 : 2-$>$5-$>$3-$>$8 : 38.05 \\
+
+\end{document}
+% Koniec wieńczy dzieło.

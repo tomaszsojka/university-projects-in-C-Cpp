@@ -1,0 +1,123 @@
+\hypertarget{classwspolrzedne}{}\section{Dokumentacja klasy wspolrzedne}
+\label{classwspolrzedne}\index{wspolrzedne@{wspolrzedne}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+wspolrzedne.\+h$>$}
+
+
+
+Diagram dziedziczenia dla wspolrzedne
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classwspolrzedne__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla wspolrzedne\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classwspolrzedne__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classwspolrzedne_a38c1a6012fac2575a2446ab094186114}{podaj\+\_\+rozmiar\+\_\+planszy}} ()
+\item 
+void \mbox{\hyperlink{classwspolrzedne_a9995d04ed35891918459a091284fa76f}{wypelnij\+\_\+tab\+\_\+wsp}} ()
+\item 
+void \mbox{\hyperlink{classwspolrzedne_a9fcebd535a4a970e7007be5b13791fbf}{wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku}} ()
+\end{DoxyCompactItemize}
+\subsection*{Dodatkowe Dziedziczone Składowe}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do sczytywania wspolrzednych komorek do ozywienia(na planszy do gry w zycie) do tablicy dynamicznej punkty(pole klasy wypelnij). Jest klasa pochodna klasy \mbox{\hyperlink{classwypelnij}{wypelnij(ktora jest klasa pochodna klasy dane\+\_\+planszy)}}.
+
+Klasa zostala stworzona aby oddzielic operacje wczytania i wyswietlanie komunikatow zwiazanych z tym od logiki metod klasy sasiedzi. Metody tej klasy zawieraja rowniez operacje zapobiegajace wpisaniu niepoprawnych danych. Wykozystana jest maszyna stanow. Zawera dodatkowo typ wyliczeniowy oraz metody. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classwspolrzedne_a38c1a6012fac2575a2446ab094186114}\label{classwspolrzedne_a38c1a6012fac2575a2446ab094186114}} 
+\index{wspolrzedne@{wspolrzedne}!podaj\+\_\+rozmiar\+\_\+planszy@{podaj\+\_\+rozmiar\+\_\+planszy}}
+\index{podaj\+\_\+rozmiar\+\_\+planszy@{podaj\+\_\+rozmiar\+\_\+planszy}!wspolrzedne@{wspolrzedne}}
+\subsubsection{\texorpdfstring{podaj\+\_\+rozmiar\+\_\+planszy()}{podaj\_rozmiar\_planszy()}}
+{\footnotesize\ttfamily void wspolrzedne\+::podaj\+\_\+rozmiar\+\_\+planszy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda sluzy do wprowadzenia rozmiaru kwardatowej planszy poczatkowej(dlugosc boku).
+
+Wyswietlany jest komunikat, ktory prosi uzytkonika o podanie rozmiaru planszy , tak aby zmiescily sie wszystkie komorki do ozywienia. Nastepnie uzytkownik powinien podac ten rozmiar. Operacja sie powtarza dopoki uzytkownik nie poda liczby naturalnej. Kazdorazowo przy wpisaniu niepoprawwnych danych wyswietlany jest odpowiedni komunikat. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwspolrzedne_a38c1a6012fac2575a2446ab094186114_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwspolrzedne_a9995d04ed35891918459a091284fa76f}\label{classwspolrzedne_a9995d04ed35891918459a091284fa76f}} 
+\index{wspolrzedne@{wspolrzedne}!wypelnij\+\_\+tab\+\_\+wsp@{wypelnij\+\_\+tab\+\_\+wsp}}
+\index{wypelnij\+\_\+tab\+\_\+wsp@{wypelnij\+\_\+tab\+\_\+wsp}!wspolrzedne@{wspolrzedne}}
+\subsubsection{\texorpdfstring{wypelnij\+\_\+tab\+\_\+wsp()}{wypelnij\_tab\_wsp()}}
+{\footnotesize\ttfamily void wspolrzedne\+::wypelnij\+\_\+tab\+\_\+wsp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda sluzy do wypelnienia tablicy dynamicznej punkty(pole klasy wypelnij) przez uzytkownika(recznie).
+
+Najpierw sczytany jest rozmiar kwadratowej planszy poczatkowej(metoda podaj\+\_\+rozmiar\+\_\+planszy). Tworzona jest tablica wspolrzednych punkty(metoda klasy wypelnij stworz\+\_\+tab\+\_\+wsp) o rozmiarze rozmiar $\ast$ rozmiar $\ast$ 2 (jest to ilosc komorek na planszy $\ast$ 2(dwie wspolrzedne)). Wyswitlony jest komunikat jak zakonczyc wpisywanie wspolrzednych komorek do ozywienia. W petli wykorzystana jest maszyna stanow do pobrania od uzytkownika wspolrzednych. Wyswietlany komentarz prosi uzytkownika o wybor sposobu wprowadzenia wspolrzednych komorek do ozywienia. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwspolrzedne_a9995d04ed35891918459a091284fa76f_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwspolrzedne_a9995d04ed35891918459a091284fa76f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwspolrzedne_a9fcebd535a4a970e7007be5b13791fbf}\label{classwspolrzedne_a9fcebd535a4a970e7007be5b13791fbf}} 
+\index{wspolrzedne@{wspolrzedne}!wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku@{wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku}}
+\index{wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku@{wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku}!wspolrzedne@{wspolrzedne}}
+\subsubsection{\texorpdfstring{wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku()}{wypelnij\_tab\_wsp\_z\_pliku()}}
+{\footnotesize\ttfamily void wspolrzedne\+::wypelnij\+\_\+tab\+\_\+wsp\+\_\+z\+\_\+pliku (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda sluzy do wypelnienia tablicy dynamicznej punkty(pole klasy wypelnij) z pliku o podanej nazwie.
+
+Najpierw zostaje wyswietlony komunikat proszacy o podanie nazwy pliku i wyjasniajacy jak beda interpretowane dane w pliku. Po podaniu nazwy otwieranyn jest plik. Wykorzystany przeciazony operator strumieniowy $>$$>$. Jezeli plik nie istnieje, wyrzucany jest wyjatek przez ten operator. Jesli istnieje, dane zostaja wczytane z pliku w podany w komunikacie sposob. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{classwspolrzedne_a9fcebd535a4a970e7007be5b13791fbf_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwspolrzedne_a9fcebd535a4a970e7007be5b13791fbf_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__wspolrzedne_8h}{klasa\+\_\+wspolrzedne.\+h}}\item 
+\mbox{\hyperlink{metody__wspolrzedne_8cpp}{metody\+\_\+wspolrzedne.\+cpp}}\end{DoxyCompactItemize}

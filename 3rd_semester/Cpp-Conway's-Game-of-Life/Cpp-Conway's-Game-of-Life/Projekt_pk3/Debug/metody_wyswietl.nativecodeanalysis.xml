@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>c:\users\tomek\desktop\projekt_pk3\projekt_pk3\</FILEPATH>
+      <FILENAME>metody_wyswietl.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Ignorowana wartość zwrotna: „getchar”.</DESCRIPTION>
+    <FUNCTION>wyswietl::zapisz_plansze</FUNCTION>
+    <DECORATED>?zapisz_plansze@wyswietl@@QAEXXZ</DECORATED>
+    <FUNCLINE>21</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

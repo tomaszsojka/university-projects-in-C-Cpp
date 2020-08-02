@@ -1,0 +1,190 @@
+
+	std::vector <std::shared_ptr <Platform>> group;
+	//std::vector <std::shared_ptr <Platform>> get_group();
+	void make_group(std::vector <std::shared_ptr <Platform>> & shared_ptr_represent);
+
+
+
+/*
+std::vector<std::shared_ptr<Platform>> Group_of_Plats::get_group()
+{
+	return group;
+}*/
+
+void Group_of_Plats::make_group(std::vector <std::shared_ptr <Platform>> & shared_ptr_represent)
+{
+	Draw drawer;
+	
+	float y_counter = 530;
+	for (int i = 0; i < number_of_plats; i++)
+	{
+		drawer.coordinates_draw(0.f, 380.f, 50.f, 100.f); // x,x, y,y
+		//group.push_back( std::make_shared<Platform>(drawer.get_coord_x(), y_counter));
+		
+		group.emplace_back(std::make_shared<Platform>(drawer.get_coord_x(), y_counter));
+
+		std::cout << drawer.get_coord_x() << "  " << y_counter << std::endl;//<< drawer.get_coord_y() << std::endl;
+		y_counter -= drawer.get_coord_y();
+
+	}
+
+	shared_ptr_represent = group; // przyrownuje reprezentanta w mainie do utworzonej grupy
+}
+
+
+/*	std::vector <std::shared_ptr<Platform>> rep_vec;
+	rep_vec.reserve(nr_of_plats);
+	*/
+
+	/*-------------------
+		//std::shared_ptr <Platform>  tmp;
+		for (int i = 0; i < group.get_nr_of_plats(); i++)
+		{
+			rep_vec[i]->Platform_move();
+			if (rep_vec[i]->get_coord_y() >= 533.f) // platforma jest na dole
+			{
+				float coord_y_of_upper = 530;
+				for (int j = 0; j < group.get_nr_of_plats(); j++) // chwilowa wersja, zeby dzialalo
+				{
+					if (rep_vec[j]->get_coord_y() < coord_y_of_upper)
+						coord_y_of_upper = rep_vec[j]->get_coord_y();
+				}
+				rep_vec[i]->lower_to_upper(coord_y_of_upper); //przrzucam na gore dolny, zmeniaja sie jego wspolrzedne
+				
+				//group.set_up_plat_y(rep_vec[i]->get_coord_y()); // ustawiam nowa wspolrzedna najwyzszej, nie moge uzyc plat_coord_y, bo ma stara wartosc
+			}
+			
+		}
+
+		for (int i = 0; i < group.get_nr_of_plats(); i++)
+		{
+			sPlatform.setPosition(rep_vec[i]->get_coord_x(), rep_vec[i]->get_coord_y());
+			app.draw(sPlatform);
+		}
+
+		//---------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+______________________________________________________
+
+
+
+
+			/*
+			if (m_nr_of_replaced == i) // zamieniony przelecial przez okno, losuje nastepny do zamiany
+			{
+				Draw drawer;
+				drawer.integer_draw(0, number_of_plats-1);
+				m_nr_to_replace = drawer.get_int_nr();
+
+			}
+			if (m_nr_to_replace == i)
+			{
+				moving_one.set_moving_plat(*group0[i]);
+				m_nr_of_replaced = m_nr_to_replace;
+			}
+			
+			if (c_nr_of_replaced == i) // zamieniony przelecial przez okno, losuje nastepny do zamiany
+			{
+				Draw drawer;
+				do
+				{
+					drawer.integer_draw(0, number_of_plats - 1);
+				} while (drawer.get_int_nr() == m_nr_to_replace); // jak chce zamienic za ten sam, co ruszajaca, to szuka innego
+				
+				c_nr_to_replace = drawer.get_int_nr();
+			}
+			if (c_nr_to_replace == i)
+			{
+				crush_one.set_coord_x(group0[i]->get_coord_x());
+				crush_one.set_coord_y(group0[i]->get_coord_y());
+				c_nr_of_replaced = c_nr_to_replace;
+			}
+			*/
+
+
+
+
+
+			/*
+			if (group.get_m_nr_of_replaced() == group.get_m_nr_to_replace() && group.get_c_nr_of_replaced() == group.get_c_nr_to_replace())
+			{
+				if (i != group.get_m_nr_of_replaced() && i != group.get_c_nr_of_replaced())
+					sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+				else if (i == group.get_m_nr_of_replaced()) // ruszajacy sie
+				{
+					sPlatform.setPosition(group.get_moving_one().get_coord_x(), group.get_moving_one().get_coord_y());
+				}
+				else // rozpadajacy
+				{
+					scPlatform.setPosition(group.get_crush_one().get_coord_x(), group.get_crush_one().get_coord_y());
+				}
+			}
+			//ruszajaca jest w oknie, rozpadajaca sie nie
+			else if (group.get_m_nr_of_replaced() == group.get_m_nr_to_replace() && group.get_c_nr_of_replaced() != group.get_c_nr_to_replace())
+			{
+				if (i != group.get_m_nr_of_replaced())
+					sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+				else
+				{
+					sPlatform.setPosition(group.get_moving_one().get_coord_x(), group.get_moving_one().get_coord_y());
+				}
+			}
+			else if(group.get_m_nr_of_replaced() != group.get_m_nr_to_replace() && group.get_c_nr_of_replaced() == group.get_c_nr_to_replace())
+			{
+				if (i != group.get_c_nr_of_replaced())
+					sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+				else 
+				{
+					scPlatform.setPosition(group.get_crush_one().get_coord_x(), group.get_crush_one().get_coord_y());
+				}
+			}
+			else
+			{
+				sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+			}
+			*/
+
+			/*
+			if (group.get_m_nr_of_replaced() == group.get_m_nr_to_replace())
+			{
+				if (i != group.get_m_nr_of_replaced()) 
+					sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+				else
+				{
+					sPlatform.setPosition(group.get_moving_one().get_coord_x(), group.get_moving_one().get_coord_y());
+				}
+			}
+			else
+			{
+				sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+			}
+			*/
+			/*
+			if (group.get_c_nr_of_replaced() == group.get_c_nr_to_replace())
+			{
+				if (i != group.get_c_nr_of_replaced())
+					sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+				else
+				{
+					scPlatform.setPosition(group.get_crush_one().get_coord_x(), group.get_crush_one().get_coord_y());
+				}
+			}
+			else
+			{
+				sPlatform.setPosition(group.get_group0()[i]->get_coord_x(), group.get_group0()[i]->get_coord_y());
+			}*/

@@ -1,0 +1,138 @@
+\hypertarget{operatory_8cpp}{}\section{Dokumentacja pliku operatory.\+cpp}
+\label{operatory_8cpp}\index{operatory.\+cpp@{operatory.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}operatory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}klasa\+\_\+element\+\_\+planszy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}klasa\+\_\+dane\+\_\+planszy.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}klasa\+\_\+wyswietl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}klasa\+\_\+wypelnij.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}klasa\+\_\+wspolrzedne.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include \char`\"{}komunkiaty\+\_\+wyjatki.\+h\char`\"{}}\newline
+Wykres zależności załączania dla operatory.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operatory_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{operatory_8cpp_ad65d25c853c745fe56fad0e05e4a7da6}{operator$<$$<$}} (std\+::ostream \&s, \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ob)
+\item 
+std\+::ostream \& \mbox{\hyperlink{operatory_8cpp_a9d12c7cb1f3b9a61a3537d62f0ce72a0}{operator$<$$<$}} (std\+::ostream \&s, \mbox{\hyperlink{classwyswietl}{wyswietl}} \&ob)
+\item 
+std\+::ifstream \& \mbox{\hyperlink{operatory_8cpp_a1531ce7c649b12cb4ab628411def882f}{operator$>$$>$}} (std\+::ifstream \&plik, \mbox{\hyperlink{classwspolrzedne}{wspolrzedne}} \&ob)
+\item 
+std\+::ofstream \& \mbox{\hyperlink{operatory_8cpp_a4f9a5f149899bff120ed44cfce749c7d}{operator$<$$<$}} (std\+::ofstream \&plik, \mbox{\hyperlink{classwyswietl}{wyswietl}} \&ob)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{operatory_8cpp_ad65d25c853c745fe56fad0e05e4a7da6}\label{operatory_8cpp_ad65d25c853c745fe56fad0e05e4a7da6}} 
+\index{operatory.\+cpp@{operatory.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!operatory.\+cpp@{operatory.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s,  }\item[{\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$}]{ob }\end{DoxyParamCaption})}
+
+Przeciazony operator strumieniowy $<$$<$ sluzy do wyswietlania stanu obiektu klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}}.
+
+W zaleznosci od stanu (wartosci pola czy\+\_\+zyje) elementu wskazywanego przez drugi argument operator \char`\"{}wrzuca\char`\"{} do strumienia ostream inne wartosci. \char`\"{} . \char`\"{} -\/ gdy komorka nie zyje. \char`\"{} O \char`\"{} -\/ gdy komorka zyje. 
+\begin{DoxyParams}{Parametry}
+{\em s} & strumien ostream, do ktorego beda \char`\"{}wrzucone\char`\"{} znaki do wyswietlenia. \\
+\hline
+{\em ob} & wskaznik na element, ktorego stan ma byc wyswietlony. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+strumien ostream i to co w nim. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operatory_8cpp_ad65d25c853c745fe56fad0e05e4a7da6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operatory_8cpp_a9d12c7cb1f3b9a61a3537d62f0ce72a0}\label{operatory_8cpp_a9d12c7cb1f3b9a61a3537d62f0ce72a0}} 
+\index{operatory.\+cpp@{operatory.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!operatory.\+cpp@{operatory.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{s,  }\item[{\mbox{\hyperlink{classwyswietl}{wyswietl}} \&}]{ob }\end{DoxyParamCaption})}
+
+Przeciazony operator strumieniowy $<$$<$ sluzy do wyswietlania aktualnego stanu planszy do gry w zycie.
+
+Operator ustawia wskaznik pomocniczy na pierwszy element planszy(w obiekcie wyswietl). Przesuwa go po niej i uzywa przeciazonego operatora $<$$<$ dla elementu planszy do wyswietlenia jego stanu. 
+\begin{DoxyParams}{Parametry}
+{\em s} & strumien ostream, do ktorego beda \char`\"{}wrzucone\char`\"{} znaki do wyswietlenia. \\
+\hline
+{\em ob} & obiekt klasy wypelnij ktorego stan planszy pod wskaznikiem ppoczatkowy byc wyswietlony. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+strumien ostream i to co w nim. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operatory_8cpp_a9d12c7cb1f3b9a61a3537d62f0ce72a0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operatory_8cpp_a4f9a5f149899bff120ed44cfce749c7d}\label{operatory_8cpp_a4f9a5f149899bff120ed44cfce749c7d}} 
+\index{operatory.\+cpp@{operatory.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!operatory.\+cpp@{operatory.\+cpp}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::ofstream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{plik,  }\item[{\mbox{\hyperlink{classwyswietl}{wyswietl}} \&}]{ob }\end{DoxyParamCaption})}
+
+Przeciazony operator strumieniowy $<$$<$ sluzy do zapisania aktualnego stanu planszy do pliku.
+
+Jesli plik podany jako pierwszy argument istnieje oraz wskaznik ppoczatkowy obiektu podanego jako drugi argument na cos wskazuje, operator zapisuje w pliku aktualny stan planszy wskazanej przez wskaznik ppoczatkowy obiektu klasy wspolrzedne. Operator uzywa pomocniczego wskaznika ktorym przesuwa sie po planszy i uzywa przeciazonego operatora $<$$<$ dla kazdego elementu planszy. Jesli nie ma planszy, operator nic nie robi. Jesli nie istnieje podalny plik, operator wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em plik} & strumien ofstream, plik do ktorego zapisany bedzie aktualny stan planszy. \\
+\hline
+{\em ob} & obiekt klasy wyswietl, z ktorego ma zostac zapisany stan planszy(wskazywanej przez wskaznik ppoczatkowy). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+strumien oftream. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operatory_8cpp_a4f9a5f149899bff120ed44cfce749c7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{operatory_8cpp_a1531ce7c649b12cb4ab628411def882f}\label{operatory_8cpp_a1531ce7c649b12cb4ab628411def882f}} 
+\index{operatory.\+cpp@{operatory.\+cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!operatory.\+cpp@{operatory.\+cpp}}
+\subsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::ifstream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::ifstream \&}]{plik,  }\item[{\mbox{\hyperlink{classwspolrzedne}{wspolrzedne}} \&}]{ob }\end{DoxyParamCaption})}
+
+Przeciazony operator strumieniowy $>$$>$ sluzy do wczytywania rozmiaru kwadrwtowej planszy poczatkowej oraz wspolrzednych komorek do ozywienia z pliku.
+
+Jesli plik podany jako pierwszy argument istnieje, operator sczytuje rozmiar kwadratowej planszy podstawowej Nastepnie tworzy tablice z wspolrzednymi(pole punkty(wywolanie metody stworz\+\_\+tab\+\_\+wsp dla ob klasy wspolrzedne)). Natepnie dopoki w pliku istnieja jakies liczby operator sczytuje je do stworzonej tablicy. Operator wyzruca wyjatek gdy nie ma dostepu do pliku podanego jako pierwszy argument. 
+\begin{DoxyParams}{Parametry}
+{\em plik} & strumien ifstream, plik z ktorego beda wczytane dane. \\
+\hline
+{\em ob} & obiekt klasy wspolrzedne, do ktorego (do tablicy punkty) maja zostac wczytane wspolrzedne. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+strumien iftream. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operatory_8cpp_a1531ce7c649b12cb4ab628411def882f_cgraph}
+\end{center}
+\end{figure}

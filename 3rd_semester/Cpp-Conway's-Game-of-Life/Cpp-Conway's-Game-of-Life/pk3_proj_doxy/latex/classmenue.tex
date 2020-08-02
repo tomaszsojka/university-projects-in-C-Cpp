@@ -1,0 +1,319 @@
+\hypertarget{classmenue}{}\section{Dokumentacja klasy menue}
+\label{classmenue}\index{menue@{menue}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+menue.\+h$>$}
+
+
+
+Diagram współpracy dla menue\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classmenue__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Statyczne metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classmenue_a799c1d6893e274fc84d5fc83229e740a}{kom\+\_\+wpr\+\_\+danych}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a3902f4dcca17c168edf03ae828719e3d}{kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a1f0607fc914414d432e6612a0e20668d}{kom\+\_\+s\+\_\+czy\+\_\+s}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a4c13c8e43e1fe3c1eaf62543c126a6b7}{kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a96748d0634771d7150c1eb73ed7472c5}{kom\+\_\+zapis}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a303502c5a160ee276a3ac7ce21ef4f4f}{kom\+\_\+zapis\+\_\+w\+\_\+petli}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a0a628bf84deb7c82ff352e762a6ddbba}{kom\+\_\+stan\+\_\+planszy}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_a3d62c66c619cbd4ae2fea6dc5a96ec51}{kom\+\_\+start}} ()
+\item 
+static int \mbox{\hyperlink{classmenue_af6a59b2891dfcc8df337d3ac11fb767d}{wybor}} (int \&zmiana\+\_\+wyb)
+\item 
+static void \mbox{\hyperlink{classmenue_a13c6c317f85272bf3fd49ff0ad93b28a}{petla}} (\mbox{\hyperlink{classkomorka}{komorka}} ko, \mbox{\hyperlink{classwyswietl}{wyswietl}} wys)
+\item 
+static void \mbox{\hyperlink{classmenue_a361a3472705b073f0cc7ae3e93576f04}{zatrzymaj\+\_\+petle}} ()
+\item 
+static void \mbox{\hyperlink{classmenue_aef7d47abaf00296cef8820ac538f017e}{poprowadz\+\_\+uzytkownika}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do laczenia wszystkich operacji, aby gra w zycie dzialala poprawnie oraz do komunikacji z uzytkownikiem. 
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classmenue_a1f0607fc914414d432e6612a0e20668d}\label{classmenue_a1f0607fc914414d432e6612a0e20668d}} 
+\index{menue@{menue}!kom\+\_\+s\+\_\+czy\+\_\+s@{kom\+\_\+s\+\_\+czy\+\_\+s}}
+\index{kom\+\_\+s\+\_\+czy\+\_\+s@{kom\+\_\+s\+\_\+czy\+\_\+s}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+s\+\_\+czy\+\_\+s()}{kom\_s\_czy\_s()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+s\+\_\+czy\+\_\+s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz prosi uzytkownika o wybor, czy uzytkownik chce rozpoczac gre w zycie z ozywionymi przez siebie komorkami, czy wylaczyc program i cos jeszcze zmienic. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a1f0607fc914414d432e6612a0e20668d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a4c13c8e43e1fe3c1eaf62543c126a6b7}\label{classmenue_a4c13c8e43e1fe3c1eaf62543c126a6b7}} 
+\index{menue@{menue}!kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli@{kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli}}
+\index{kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli@{kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli()}{kom\_s\_czy\_s\_w\_petli()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+s\+\_\+czy\+\_\+s\+\_\+w\+\_\+petli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz dotyczy wyboru, czy uzytkownik chce wystartowac gre, czy zakonczyc program i cos zmienic. Jest on wyswietlany w petli, ktora konczy sie gdy uzytkownik poda poprawna odpowiedz (1 lub 2). \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a4c13c8e43e1fe3c1eaf62543c126a6b7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a0a628bf84deb7c82ff352e762a6ddbba}\label{classmenue_a0a628bf84deb7c82ff352e762a6ddbba}} 
+\index{menue@{menue}!kom\+\_\+stan\+\_\+planszy@{kom\+\_\+stan\+\_\+planszy}}
+\index{kom\+\_\+stan\+\_\+planszy@{kom\+\_\+stan\+\_\+planszy}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+stan\+\_\+planszy()}{kom\_stan\_planszy()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+stan\+\_\+planszy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz informuje, ze zaraz zostanie wyswietlony aktualny stan planszy. Metoda jest uzyta przed wyswietleniem planszy w wersji zaraz po wprowadzeniu danych przez uzytkownika. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a0a628bf84deb7c82ff352e762a6ddbba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a3d62c66c619cbd4ae2fea6dc5a96ec51}\label{classmenue_a3d62c66c619cbd4ae2fea6dc5a96ec51}} 
+\index{menue@{menue}!kom\+\_\+start@{kom\+\_\+start}}
+\index{kom\+\_\+start@{kom\+\_\+start}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+start()}{kom\_start()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz informuje, ze zaraz rozpocznie sie gra w zycie oraz jak ja zakonczyc. Metoda jest uzyta tuz przed startem gry. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a3d62c66c619cbd4ae2fea6dc5a96ec51_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a799c1d6893e274fc84d5fc83229e740a}\label{classmenue_a799c1d6893e274fc84d5fc83229e740a}} 
+\index{menue@{menue}!kom\+\_\+wpr\+\_\+danych@{kom\+\_\+wpr\+\_\+danych}}
+\index{kom\+\_\+wpr\+\_\+danych@{kom\+\_\+wpr\+\_\+danych}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+wpr\+\_\+danych()}{kom\_wpr\_danych()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+wpr\+\_\+danych (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz prosi uzytkownika o wybor sposobu wprowadzenia wspolrzednych komorek do ozywienia. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a799c1d6893e274fc84d5fc83229e740a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a3902f4dcca17c168edf03ae828719e3d}\label{classmenue_a3902f4dcca17c168edf03ae828719e3d}} 
+\index{menue@{menue}!kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli@{kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli}}
+\index{kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli@{kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli()}{kom\_wpr\_danych\_w\_petli()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+wpr\+\_\+danych\+\_\+w\+\_\+petli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz dotyczy wyboru sposobu wprowadzenia wspolrzednych. Jest on wyswietlany w petli, ktora konczy sie gdy uzytkownik poda poprawna odpowiedz (1 lub 2). \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a3902f4dcca17c168edf03ae828719e3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a96748d0634771d7150c1eb73ed7472c5}\label{classmenue_a96748d0634771d7150c1eb73ed7472c5}} 
+\index{menue@{menue}!kom\+\_\+zapis@{kom\+\_\+zapis}}
+\index{kom\+\_\+zapis@{kom\+\_\+zapis}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+zapis()}{kom\_zapis()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+zapis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz prosi uzytkownika o wybor, czy chce on zapisac aktualny stan(po zatrzymaniu) planszy do pliku. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a96748d0634771d7150c1eb73ed7472c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a303502c5a160ee276a3ac7ce21ef4f4f}\label{classmenue_a303502c5a160ee276a3ac7ce21ef4f4f}} 
+\index{menue@{menue}!kom\+\_\+zapis\+\_\+w\+\_\+petli@{kom\+\_\+zapis\+\_\+w\+\_\+petli}}
+\index{kom\+\_\+zapis\+\_\+w\+\_\+petli@{kom\+\_\+zapis\+\_\+w\+\_\+petli}!menue@{menue}}
+\subsubsection{\texorpdfstring{kom\+\_\+zapis\+\_\+w\+\_\+petli()}{kom\_zapis\_w\_petli()}}
+{\footnotesize\ttfamily void menue\+::kom\+\_\+zapis\+\_\+w\+\_\+petli (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda wyswietla komentarz na strumien wyjsciowy.
+
+Wyswietlany komentarz dotyczy wyboru, czy uzytkownik chce zapisac plansze do pliku. Jest on wyswietlany w petli, ktora konczy sie gdy uzytkownik poda poprawna odpowiedz (1 lub 2). \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a303502c5a160ee276a3ac7ce21ef4f4f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a13c6c317f85272bf3fd49ff0ad93b28a}\label{classmenue_a13c6c317f85272bf3fd49ff0ad93b28a}} 
+\index{menue@{menue}!petla@{petla}}
+\index{petla@{petla}!menue@{menue}}
+\subsubsection{\texorpdfstring{petla()}{petla()}}
+{\footnotesize\ttfamily void menue\+::petla (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkomorka}{komorka}}}]{ko,  }\item[{\mbox{\hyperlink{classwyswietl}{wyswietl}}}]{wys }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda zawiera nieskonczona petle do gry w zycie.
+
+W metodzie, w nieskonczonej petli, wywolywane sa wszelkie metody konieczne do zmiany stanu planszy(ozywianie i zabijanie) oraz do wyswietlenia jej. Z petli da sie wyjsc przez zmiane wartosci pola statycznego klasy menue warunek\+\_\+wyjscia. Za zmiane tego pola odpowiedzialna jest zsynchronizowany watek metody zatrzymaj\+\_\+petle. Obiekty podane jako argumenty musialy byc kopiowane, poniewaz tak jest domyslnie w watku, ktory przyjmuje funkcje i jej rgumenty. Zwykla referencja nic nie zmieniala. Niestety nie potrafie jeszcze dodac do watku argumentow bez kopiwania i dzialac na oryginale. 
+\begin{DoxyParams}{Parametry}
+{\em ko} & kopia obiektu klasy komorka, za pomoca metod tego obiektu beda ozywiane i zabijane komorki \\
+\hline
+{\em wys} & kopia obiektu klasy wyswietl, za pomoca metody tego obiektu bedzie wyswietlana plansza do gry w zycie i jej aktualny stan. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a13c6c317f85272bf3fd49ff0ad93b28a_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a13c6c317f85272bf3fd49ff0ad93b28a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_aef7d47abaf00296cef8820ac538f017e}\label{classmenue_aef7d47abaf00296cef8820ac538f017e}} 
+\index{menue@{menue}!poprowadz\+\_\+uzytkownika@{poprowadz\+\_\+uzytkownika}}
+\index{poprowadz\+\_\+uzytkownika@{poprowadz\+\_\+uzytkownika}!menue@{menue}}
+\subsubsection{\texorpdfstring{poprowadz\+\_\+uzytkownika()}{poprowadz\_uzytkownika()}}
+{\footnotesize\ttfamily void menue\+::poprowadz\+\_\+uzytkownika (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Glowna metoda w ktorej sa utworzone wszystkie obiekty oraz wywolane wszystkie metody konieczne do poprawnego dzialania gry w zycie
+
+Kolejnosc dzialania\+: Uzytkownika czeka pierwszy wybor, czy chce wprowadzic wspolrzedne komorek do ozywienia z pliku czy wpisac je recznie. Po sczytaniu wspolrzednych (jednym ze sposobow) do tablicy dynamicznej utworzona zostaje postawowa plansza, a nastepnie wypelniona. Stan planszy jest wyswietlony. Jesli wszystko sie zgadza z oczekiwaniami, uzytkownik moze wystartowac gre w zycie. Jesli nie, moze wylaczyc program aby podac jeszcze raz inne wspolrzedne. Gdy uzytkownik wybral start gry, zostaje wyswietlony komunikat o sposobie zakonczenia gry. Gdy uzytkownik przerwie dzialanie programu (poprzez dzialanie opisane przy metodzie zatrzymaj\+\_\+petle) pytany jest, czy chce zapisac aktualny stan planszy do pliku. Jesli tak, program pyta o nazwe nowego pliku do utworzenia. Program sie konczy. Jest to jedyna metoda wywolana w funkcji main. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_aef7d47abaf00296cef8820ac538f017e_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classmenue_aef7d47abaf00296cef8820ac538f017e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_af6a59b2891dfcc8df337d3ac11fb767d}\label{classmenue_af6a59b2891dfcc8df337d3ac11fb767d}} 
+\index{menue@{menue}!wybor@{wybor}}
+\index{wybor@{wybor}!menue@{menue}}
+\subsubsection{\texorpdfstring{wybor()}{wybor()}}
+{\footnotesize\ttfamily int menue\+::wybor (\begin{DoxyParamCaption}\item[{int \&}]{zmiana\+\_\+wyb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda do wyboru miedzy dwoma opcjami.
+
+Metoda zaleznosci od parametru podanego jako argument wyswietla komunikaty zwiazane z roznym wyborem. 1 -\/ wybor sposobu wprowadzenia wspolrzednych punktow do ozywienia 2 -\/ wybor czy wystartowac gre w zycie, czy ja zakonczyc 3 -\/ wybor czy zapisac aktualny stan planszy po zatrzymaniu nieskonczonej petli gry w zycie. Metoda nie konczy sie dopoki uzytkownik nie poda liczby 1 lub 2 na wejscie. Po zakonczeniu zwraca nr wyboru, ktory pozniej jest uzyty do wywolania odpowiednich metod. 
+\begin{DoxyParams}{Parametry}
+{\em zmiana\+\_\+wyboru} & jest indeksem wyboru, w zaleznosci od jego wartosci wyswietlaja sie inne opcje wyboru(1 -\/ jak wprowadzic wspolrzedne, 2 -\/ czy wystartowac gre w zycie, 3 -\/ czy zapisac aktualny stan planszy). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+wybor -\/ 48 (-\/48 , poniewaz wybrane opcje zostaja sczytane jako kod ascii) 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classmenue_af6a59b2891dfcc8df337d3ac11fb767d_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_af6a59b2891dfcc8df337d3ac11fb767d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classmenue_a361a3472705b073f0cc7ae3e93576f04}\label{classmenue_a361a3472705b073f0cc7ae3e93576f04}} 
+\index{menue@{menue}!zatrzymaj\+\_\+petle@{zatrzymaj\+\_\+petle}}
+\index{zatrzymaj\+\_\+petle@{zatrzymaj\+\_\+petle}!menue@{menue}}
+\subsubsection{\texorpdfstring{zatrzymaj\+\_\+petle()}{zatrzymaj\_petle()}}
+{\footnotesize\ttfamily void menue\+::zatrzymaj\+\_\+petle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Metoda sluzy do zatrzymania nieskonczonej petli do gry w zycie.
+
+Metoda czeka na podanie przez uzytkownika danych na wejscie. Jesli podana dana jest litera n, metoda zmienia wartosc pola klasy menue warunek\+\_\+wyjscia na true. Nastepnie po sprawdzeniu tego warunku w nieskonczonej petli do gry w zycie petla sie zatrzymuje. Jesli uzytkownik podal cos innego, bufor sie czysci i metoda jest wywolana ponownie rekurencyjnie. Rekurencja byla konieczna, poniewaz inaczej metoda konczyla sie przed moetoda petla. Uniemozliwialo to wyjscie z nieskonczonej petli w sytuacji, gdy uzytkownik najpierw podal niepoprawna dana (cos co nie bylo litera n). Watek tej metody jest zsynchornizowany z watkiem metody petla. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmenue_a361a3472705b073f0cc7ae3e93576f04_icgraph}
+\end{center}
+\end{figure}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__menue_8h}{klasa\+\_\+menue.\+h}}\item 
+\mbox{\hyperlink{metody__menue_8cpp}{metody\+\_\+menue.\+cpp}}\end{DoxyCompactItemize}

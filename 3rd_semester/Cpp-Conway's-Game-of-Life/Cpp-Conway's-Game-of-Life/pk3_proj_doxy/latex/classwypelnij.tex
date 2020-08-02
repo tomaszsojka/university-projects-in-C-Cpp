@@ -1,0 +1,280 @@
+\hypertarget{classwypelnij}{}\section{Dokumentacja klasy wypelnij}
+\label{classwypelnij}\index{wypelnij@{wypelnij}}
+
+
+{\ttfamily \#include $<$klasa\+\_\+wypelnij.\+h$>$}
+
+
+
+Diagram dziedziczenia dla wypelnij
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classwypelnij__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla wypelnij\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classwypelnij__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classwypelnij_a42b0cf405df96021ad482478d7886b9e}{wypelnij}} ()
+\item 
+\mbox{\hyperlink{classwypelnij_a3bb9c5b24d76cdef56f5683c03277d96}{$\sim$wypelnij}} ()
+\item 
+int $\ast$ \mbox{\hyperlink{classwypelnij_a5fb16bb1a4571f9c45c665bf3eac1089}{get\+\_\+punkty}} ()
+\item 
+int \mbox{\hyperlink{classwypelnij_aa30d2e93f672e9f4b35c842f52040019}{get\+\_\+el\+\_\+punktow}} (int idx)
+\item 
+void \mbox{\hyperlink{classwypelnij_a7127a46567e8f6defc6475c96a651c47}{set\+\_\+punkty}} (int $\ast$p)
+\item 
+void \mbox{\hyperlink{classwypelnij_a8da39f8d32230b2db5f87d0e4cebc83f}{set\+\_\+el\+\_\+punktow}} (int idx, int liczba)
+\item 
+void \mbox{\hyperlink{classwypelnij_a8dfa84177176a7069f959c988015006f}{stworz\+\_\+tab\+\_\+wsp}} ()
+\item 
+void \mbox{\hyperlink{classwypelnij_af326848988a108fa3ea9fe98afe31ea2}{usun\+\_\+tab\+\_\+wsp}} ()
+\item 
+void \mbox{\hyperlink{classwypelnij_a0bdc69f47a3ce9917e22b09c02e2ec86}{wypelnij\+\_\+plansze}} ()
+\item 
+\mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ \mbox{\hyperlink{classwypelnij_a591374caf7e1350fcad469f47baa41e2}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t el)
+\end{DoxyCompactItemize}
+\subsection*{Atrybuty chronione}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \mbox{\hyperlink{classwypelnij_a31de55fdeeb16737abb02d089ab339e8}{punkty}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+Klasa sluzy do wypelniania planszy do gry w zycie zywymi komorkami. Jest klasa bazowa klasy wspolrzedne. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{classwypelnij_a42b0cf405df96021ad482478d7886b9e}\label{classwypelnij_a42b0cf405df96021ad482478d7886b9e}} 
+\index{wypelnij@{wypelnij}!wypelnij@{wypelnij}}
+\index{wypelnij@{wypelnij}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{wypelnij()}{wypelnij()}}
+{\footnotesize\ttfamily wypelnij\+::wypelnij (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Konstruktor klasy wypelnij. Utworzony, aby ustawiac pole punkty na nullptr przy tworzeniu nowego obiektu. \mbox{\Hypertarget{classwypelnij_a3bb9c5b24d76cdef56f5683c03277d96}\label{classwypelnij_a3bb9c5b24d76cdef56f5683c03277d96}} 
+\index{wypelnij@{wypelnij}!````~wypelnij@{$\sim$wypelnij}}
+\index{````~wypelnij@{$\sim$wypelnij}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{$\sim$wypelnij()}{~wypelnij()}}
+{\footnotesize\ttfamily wypelnij\+::$\sim$wypelnij (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destruktor klasy wypelnij. Utworzony, aby dodatkwo zwalniac pamiec zajmowana przez tablice dynamiczna punkty (wywolana funkcja usun\+\_\+tab\+\_\+wsp). Jesli pole punkty na cos wskazuje, zostaje to usuniete. Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classwypelnij_a3bb9c5b24d76cdef56f5683c03277d96_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classwypelnij_aa30d2e93f672e9f4b35c842f52040019}\label{classwypelnij_aa30d2e93f672e9f4b35c842f52040019}} 
+\index{wypelnij@{wypelnij}!get\+\_\+el\+\_\+punktow@{get\+\_\+el\+\_\+punktow}}
+\index{get\+\_\+el\+\_\+punktow@{get\+\_\+el\+\_\+punktow}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{get\+\_\+el\+\_\+punktow()}{get\_el\_punktow()}}
+{\footnotesize\ttfamily int wypelnij\+::get\+\_\+el\+\_\+punktow (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+Metoda zwraca element tablicy dynamicznej punkty o podanym w argumencie indeksie.
+
+Metoda zostala stworzona aby uzyskac dostep do jednego elementu pola punkty (wskazaego przez argument) przez klasy niezaprzyjaznione i niepochodne. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy wypelnij (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em idx} & indeks elementu tablicy dynamicznej do zwrocenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+punkty, jesli jest dotep do obiektu klasy wypelnij. Jesli nie, zwraca -\/1. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwypelnij_aa30d2e93f672e9f4b35c842f52040019_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a5fb16bb1a4571f9c45c665bf3eac1089}\label{classwypelnij_a5fb16bb1a4571f9c45c665bf3eac1089}} 
+\index{wypelnij@{wypelnij}!get\+\_\+punkty@{get\+\_\+punkty}}
+\index{get\+\_\+punkty@{get\+\_\+punkty}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{get\+\_\+punkty()}{get\_punkty()}}
+{\footnotesize\ttfamily int $\ast$ wypelnij\+::get\+\_\+punkty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda zwraca pole punkty.
+
+Metoda zostala stworzona aby uzyskac dostep do pola punkty przez klasy niezaprzyjaznione i niepochodne. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy wypelnij (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. \begin{DoxyReturn}{Zwraca}
+punkty, jesli jest dotep do obiektu klasy \mbox{\hyperlink{classdane__planszy}{dane\+\_\+planszy}}. Jesli nie, zwraca nullptr. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classwypelnij_a5fb16bb1a4571f9c45c665bf3eac1089_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a591374caf7e1350fcad469f47baa41e2}\label{classwypelnij_a591374caf7e1350fcad469f47baa41e2}} 
+\index{wypelnij@{wypelnij}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} $\ast$ wypelnij\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{el }\end{DoxyParamCaption})}
+
+Przeciazony operator tablicowy \mbox{[}\mbox{]}, ktory ustawia pomocniczy wskaznik na elemencie o podanym w argumencie indeksie i zwraca go.
+
+Operator ustawia wskaznik chwilowy tmp na adres elementu planszy do gry w zycie o podanym przez argument indeksie. Indeks jest interpretowany w nastepujacy sposob\+: Poniewaz metoda przesuwa pomocniczy wskaznik kolejno po wierszach, indeks oznacza liczbe przesuniec konieczna do ustawienia tego wskaznika. Indeks rowny jest pierwszej wspolrzednej x + rozmiar $\ast$ druga wspolrzedna y. Jesli okaze sie, ze wspolrzedna w tablicy punkty wskazywala na element poza plansza zostaje wyrzucony wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em el} & indeks komorki do ozywienia (ilosc koniecznych przesuniec od elementu poczatkowego, aby dostac sie do pozodanej komorki) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+adres na ktory ustawiony jest pomocniczy wskaznik, czyli elementu o podanym w argumencie indeksie. 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwypelnij_a591374caf7e1350fcad469f47baa41e2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a8da39f8d32230b2db5f87d0e4cebc83f}\label{classwypelnij_a8da39f8d32230b2db5f87d0e4cebc83f}} 
+\index{wypelnij@{wypelnij}!set\+\_\+el\+\_\+punktow@{set\+\_\+el\+\_\+punktow}}
+\index{set\+\_\+el\+\_\+punktow@{set\+\_\+el\+\_\+punktow}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{set\+\_\+el\+\_\+punktow()}{set\_el\_punktow()}}
+{\footnotesize\ttfamily void wypelnij\+::set\+\_\+el\+\_\+punktow (\begin{DoxyParamCaption}\item[{int}]{idx,  }\item[{int}]{liczba }\end{DoxyParamCaption})}
+
+Metoda ustawia wartosc jednego elementu tablicy dynamicznej punkty. Wartosc podana jako drugi argument wpisana jest do elementu tablicy punkty o podanym indeksie w pierwszym argumencie.
+
+Metoda zostala stworzona aby uzyskac dostep i pozwolic na zmiane wartosci elementu tablicy punkty (wskazanego przez arg idx) przez klasy niezaprzyjaznione i niepochodne. Do pola przypisywana jest wartosc przekazana przez drugi argument. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy wypelnij (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em idx} & indeks elementu tablicy dynamicznej do zmiany wartosci. \\
+\hline
+{\em liczba} & wartosc , ktora ma byc przypisana elementowi tablicy punkty. \\
+\hline
+\end{DoxyParams}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwypelnij_a8da39f8d32230b2db5f87d0e4cebc83f_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classwypelnij_a8da39f8d32230b2db5f87d0e4cebc83f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a7127a46567e8f6defc6475c96a651c47}\label{classwypelnij_a7127a46567e8f6defc6475c96a651c47}} 
+\index{wypelnij@{wypelnij}!set\+\_\+punkty@{set\+\_\+punkty}}
+\index{set\+\_\+punkty@{set\+\_\+punkty}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{set\+\_\+punkty()}{set\_punkty()}}
+{\footnotesize\ttfamily void wypelnij\+::set\+\_\+punkty (\begin{DoxyParamCaption}\item[{int $\ast$}]{p }\end{DoxyParamCaption})}
+
+Metoda ustawia pole punkty.
+
+Metoda zostala stworzona aby uzyskac dostep i pozwolic na zmiane wartosci pola punkty przez klasy niezaprzyjaznione i niepochodne. Do pola przypisywana jest wartosc przekazana przez argument. Jesli cos poszlo nie tak i nie ma dostepu do obiektu klasy wypelnij (lub obiektu klasy pochodnej), metoda wyrzuca wyjatek. 
+\begin{DoxyParams}{Parametry}
+{\em p} & wskaznik na tablice dynamiczna, na ktora ma wskazywac pole punkty. \\
+\hline
+\end{DoxyParams}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{classwypelnij_a7127a46567e8f6defc6475c96a651c47_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a8dfa84177176a7069f959c988015006f}\label{classwypelnij_a8dfa84177176a7069f959c988015006f}} 
+\index{wypelnij@{wypelnij}!stworz\+\_\+tab\+\_\+wsp@{stworz\+\_\+tab\+\_\+wsp}}
+\index{stworz\+\_\+tab\+\_\+wsp@{stworz\+\_\+tab\+\_\+wsp}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{stworz\+\_\+tab\+\_\+wsp()}{stworz\_tab\_wsp()}}
+{\footnotesize\ttfamily void wypelnij\+::stworz\+\_\+tab\+\_\+wsp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda tworzy tablice dynamiczna punkty o rozmiarze 2 $\ast$ rozmiar $\ast$ rozmiar \mbox{[}jest to ilosc komorek na planszy $\ast$ 2(dwie wspolrzedne)\mbox{]} oraz wypelnia ja wartosciami -\/1.
+
+Rozmiar stworzonej tablicy odpowia liczbie elementow planszy $\ast$ 2. Mozna wiec maksymalnie wpisac tyle elementow, zeby zaplenic cala stworzona plansze. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwypelnij_a8dfa84177176a7069f959c988015006f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_af326848988a108fa3ea9fe98afe31ea2}\label{classwypelnij_af326848988a108fa3ea9fe98afe31ea2}} 
+\index{wypelnij@{wypelnij}!usun\+\_\+tab\+\_\+wsp@{usun\+\_\+tab\+\_\+wsp}}
+\index{usun\+\_\+tab\+\_\+wsp@{usun\+\_\+tab\+\_\+wsp}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{usun\+\_\+tab\+\_\+wsp()}{usun\_tab\_wsp()}}
+{\footnotesize\ttfamily void wypelnij\+::usun\+\_\+tab\+\_\+wsp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda usuwa i zwalnia pamiec po tablicy dynamicznej punkty. Metoda zabezpieczona przed kilkukrotnym usunieciem Metoda wywolana w destruktorze. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classwypelnij_af326848988a108fa3ea9fe98afe31ea2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classwypelnij_a0bdc69f47a3ce9917e22b09c02e2ec86}\label{classwypelnij_a0bdc69f47a3ce9917e22b09c02e2ec86}} 
+\index{wypelnij@{wypelnij}!wypelnij\+\_\+plansze@{wypelnij\+\_\+plansze}}
+\index{wypelnij\+\_\+plansze@{wypelnij\+\_\+plansze}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{wypelnij\+\_\+plansze()}{wypelnij\_plansze()}}
+{\footnotesize\ttfamily void wypelnij\+::wypelnij\+\_\+plansze (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Metoda sluzy do wypelnienia tablicy dynamicznej punkty.
+
+Metoda przesuwa wskaznik pomocniczy na element planszy wskzany przez wspolrzedne w tablicy punkty.\textbackslash{} Nastepnie ozywia ten element (zmiana pola klasy \mbox{\hyperlink{classelement__planszy}{element\+\_\+planszy}} czy\+\_\+zyje na true). Metoda wykorzystuje przeciazony operator tablicowy \mbox{[}\mbox{]} do przesuniecia wskaznika pomocniczego na odpowiedni element. \begin{DoxyReturn}{Zwraca}
+nic 
+\end{DoxyReturn}
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classwypelnij_a0bdc69f47a3ce9917e22b09c02e2ec86_cgraph}
+\end{center}
+\end{figure}
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classwypelnij_a0bdc69f47a3ce9917e22b09c02e2ec86_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Dokumentacja atrybutów składowych}
+\mbox{\Hypertarget{classwypelnij_a31de55fdeeb16737abb02d089ab339e8}\label{classwypelnij_a31de55fdeeb16737abb02d089ab339e8}} 
+\index{wypelnij@{wypelnij}!punkty@{punkty}}
+\index{punkty@{punkty}!wypelnij@{wypelnij}}
+\subsubsection{\texorpdfstring{punkty}{punkty}}
+{\footnotesize\ttfamily int$\ast$ wypelnij\+::punkty\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pole wskaznikowe na int, sluzy do tworzenia tablicy dynamicznej z wspolrzednymi punktow do ozywienia. 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{klasa__wypelnij_8h}{klasa\+\_\+wypelnij.\+h}}\item 
+\mbox{\hyperlink{metody__wypelnij_8cpp}{metody\+\_\+wypelnij.\+cpp}}\end{DoxyCompactItemize}
